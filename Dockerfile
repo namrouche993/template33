@@ -1,4 +1,4 @@
-FROM rocker/shiny
+FROM rocker/shiny-verse:latest
 
 # system libraries of general use
 RUN apt-get update && apt-get install -y \
