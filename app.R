@@ -39,7 +39,7 @@ ui <- fluidPage(
 server <- function(input, output) {
 
     output$texta1<-renderText({
-    paste(plica1)
+    paste(c(plica1,getwd())
     })
     output$distPlot <- renderPlot({
         # generate bins based on input$bins from ui.R
