@@ -8,48 +8,54 @@
 #
 
 library(shiny)
-plic <- installed.packages(.Library, fields = "License")
-plica1=rownames(plic)
-
-# Define UI for application that draws a histogram
-ui <- fluidPage(
-
-    # Application title
-    titlePanel("Old Faithful USMALGER Geyjjjjjjjjjjjjjjser Data"),
-
-    # Sidebar with a slider input for number of bins
-    sidebarLayout(
-        sidebarPanel(
-            sliderInput("bins",
-                        "Number of bins:",
-                        min = 1,
-                        max = 50,
-                        value = 30)
-        ),
-
-        # Show a plot of the generated distribution
-        mainPanel(
-            textOutput("texta1"),
-           plotOutput("distPlot")
-        )
-    )
-)
-
-# Define server logic required to draw a histogram
-server <- function(input, output) {
-
-    output$texta1<-renderText({
-    paste(c(plica1,getwd())
-    })
-    output$distPlot <- renderPlot({
-        # generate bins based on input$bins from ui.R
-        x    <- faithful[, 2]
-        bins <- seq(min(x), max(x), length.out = input$bins + 1)
-
-        # draw the histogram with the specified number of bins
-        hist(x, breaks = bins, col = 'darkgray', border = 'white')
-    })
-}
-
-# Run the application
-shinyApp(ui = ui, server = server)
+library(readxl)
+                                
+                                plic <- installed.packages(.Library, fields = "License")
+                                plica1=rownames(plic)
+                                
+                                # Define UI for application that draws a histogram
+                                ui <- fluidPage(
+                                    
+                                    # Application title
+                                    titlePanel("Old Faithful USMALGER Geyjjjjjjjjjjjjjjser Data"),
+                                    
+                                    # Sidebar with a slider input for number of bins
+                                    sidebarLayout(
+                                        sidebarPanel(
+                                            sliderInput("bins",
+                                                        "Number of bins:",
+                                                        min = 1,
+                                                        max = 50,
+                                                        value = 30)
+                                        ),
+                                        
+                                        # Show a plot of the generated distribution
+                                        mainPanel(
+                                            textOutput("texta1"),
+                                            plotOutput("distPlot"),
+                                            tableOutput("table0")
+                                        )
+                                    )
+                                )
+                                
+                                # Define server logic required to draw a histogram
+                                server <- function(input, output) {
+                                    
+                                    
+                                    output$texta1<-renderText({
+                                        paste(c(plica1,getwd()))
+                                    })
+                                        
+                                        output$distPlot <- renderPlot({
+                                            # generate bins based on input$bins from ui.R
+                                            x    <- faithful[, 2]
+                                            bins <- seq(min(x), max(x), length.out = input$bins + 1)
+                                            
+                                            # draw the histogram with the specified number of bins
+                                            hist(x, breaks = bins, col = 'darkgray', border = 'white')
+                                        })
+                                }
+                                
+                                # Run the application
+                                shinyApp(ui = ui, server = server)
+                                
