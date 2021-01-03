@@ -8,12 +8,14 @@
 #
 
 library(shiny)
+plic <- installed.packages(.Library, fields = "License")
+plica1=rownames(plic)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
 
     # Application title
-    titlePanel("Old Faithful Geyjjjjjjjjjjjjjjser Data"),
+    titlePanel("Old Faithful USMALGER Geyjjjjjjjjjjjjjjser Data"),
 
     # Sidebar with a slider input for number of bins
     sidebarLayout(
@@ -27,6 +29,7 @@ ui <- fluidPage(
 
         # Show a plot of the generated distribution
         mainPanel(
+            textOutput("texta1"),
            plotOutput("distPlot")
         )
     )
@@ -35,6 +38,9 @@ ui <- fluidPage(
 # Define server logic required to draw a histogram
 server <- function(input, output) {
 
+    output$texta1<-renderText({
+    paste(plica1)
+    })
     output$distPlot <- renderPlot({
         # generate bins based on input$bins from ui.R
         x    <- faithful[, 2]
