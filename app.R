@@ -9,7 +9,7 @@
 
 library(shiny)
 library(readxl)
-livraison_wilayas <- read_excel(paste0(getwd(),"/livraison_wilayas.xlsx"))
+livraison_wilayas <- mtcars
                                 
                                 plic <- installed.packages(.Library, fields = "License")
                                 plica1=rownames(plic)
