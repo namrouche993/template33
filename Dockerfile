@@ -20,6 +20,8 @@ RUN R -e "install.packages('readxl', repos='http://cran.rstudio.com/')"
 
 
 COPY app.R /srv/shiny-server/app.R
+COPY livraison_wilayas.xlsx /srv/shiny-server/livraison_wilayas.xlsx
+
 
 COPY shiny-customized.config /etc/shiny-server/shiny-server.conf
 
