@@ -9,6 +9,7 @@
 
 library(shiny)
 library(readxl)
+livraison_wilayas <- read_excel(paste0(getwd(),"/livraison_wilayas.xlsx"))
                                 
                                 plic <- installed.packages(.Library, fields = "License")
                                 plica1=rownames(plic)
@@ -41,6 +42,9 @@ library(readxl)
                                 # Define server logic required to draw a histogram
                                 server <- function(input, output) {
                                     
+                                    output$table0<-renderTable({
+                                        data.frame(head(livraison_wilayas))
+                                    })
                                     
                                     output$texta1<-renderText({
                                         paste(c(plica1,getwd()))
