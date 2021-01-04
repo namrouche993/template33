@@ -1,15 +1,27 @@
  FROM rocker/shiny-verse:latest
 
 # system libraries of general use
-RUN apt-get update && apt-get install -y \
-    sudo \
-    pandoc \
-    pandoc-citeproc \
-    libcurl4-gnutls-dev \
+
+# RUN apt-get update && apt-get install -y \
+ #   sudo \
+  #  pandoc \
+   # pandoc-citeproc \
+   # libcurl4-gnutls-dev \
+   # libcairo2-dev \
+   # libxt-dev \
+   # libssl-dev \
+   # libssh2-1-dev 
+    
+RUN apt-get update -qq && apt-get -y --no-install-recommends install \
+    libxml2-dev \
     libcairo2-dev \
-    libxt-dev \
-    libssl-dev \
-    libssh2-1-dev 
+    libsqlite3-dev \
+    libmariadbd-dev \
+    libpq-dev \
+    libssh2-1-dev \
+    unixodbc-dev \
+    libcurl4-openssl-dev \
+    libssl-dev    
 
 RUN R -e "install.packages('devtools', repos='http://cran.rstudio.com/')"
 
