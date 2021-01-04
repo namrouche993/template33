@@ -16,6 +16,7 @@ RUN R -e "install.packages('devtools', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('igraph')"
 RUN R -e "install.packages('zoo')"
 RUN R -e "install.packages('highcharter')"
+RUN R -e "install.packages('farver', repos='http://cran.rstudio.com/')"
 
 
 RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
@@ -36,7 +37,6 @@ RUN R -e "install.packages('sp', repos='http://cran.rstudio.com/')"
 
 RUN R -e "install.packages('tidyverse', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('excelR', repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('farver', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('reactable', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('shinyjs', repos='http://cran.rstudio.com/')"
 
