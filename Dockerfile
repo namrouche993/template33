@@ -17,6 +17,23 @@ RUN R -e "install.packages('lubridate', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('magrittr', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('glue', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('readxl', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('devtools', repos='http://cran.rstudio.com/')"
+
+RUN R -e "install.packages('fresh', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('shinythemes', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('shinyWidgets', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('shinycssloaders', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('shinyBS', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('leaflet', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('leaflet.extras', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('rgdal', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('sp', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('highcharter', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('tidyverse', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('excelR', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('farver', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('reactable', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('shinyjs', repos='http://cran.rstudio.com/')"
 
 
 COPY app.R /srv/shiny-server/app.R
