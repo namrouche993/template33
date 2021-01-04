@@ -37,9 +37,6 @@ library(reactable)
 library(shinyjs)
 
 
-livraison_wilayas <- read_excel(paste0(getwd(),"/livraison_wilayas.xlsx"))
-estimation_tolpopparc <- read_excel(paste0(getwd(),"/Estimation_Population_TOL_Parc_par_Wilaya.xlsx"))
-
 # Define UI for application that draws a histogram
 ui <- fluidPage(
 
