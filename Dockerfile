@@ -33,7 +33,7 @@ RUN R -e "install.packages('readxl', repos='http://cran.rstudio.com/')"
  RUN R -e "install.packages('shinycssloaders', repos='http://cran.rstudio.com/')"
  RUN R -e "install.packages('shinyBS', repos='http://cran.rstudio.com/')"
 # RUN R -e "install.packages('leaflet', repos='http://cran.rstudio.com/')"
-# RUN R -e "install.packages('leaflet.extras', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('leaflet.extras', repos='http://cran.rstudio.com/')"
  RUN R -e "install.packages('rgdal', repos='http://cran.rstudio.com/')"
  RUN R -e "install.packages('sp', repos='http://cran.rstudio.com/')"
 
