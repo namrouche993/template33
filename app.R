@@ -15,26 +15,28 @@ library(shinycssloaders)
 #library(rAmCharts)
 library(shinyBS)
 
-library(leaflet)
+# library(leaflet)
+
 #library(htmltools)
-library(leaflet.extras)
+
+# library(leaflet.extras)
 
 
-library(rgdal)
-library(sp)
-library(readxl)
-library(highcharter)
-library(tidyverse)
-library(excelR)
-library(farver)
-library(readxl)
+# library(rgdal)
+# library(sp)
+# library(readxl)
+# library(highcharter)
+# library(tidyverse)
+# library(excelR)
+# library(farver)
+# library(readxl)
 
 
-library(reactable)
+# library(reactable)
 #library(grDevices)
 #library(janitor)
 
-library(shinyjs)
+# library(shinyjs)
 
 
 # Define UI for application that draws a histogram
