@@ -43,7 +43,6 @@ RUN R -e "install.packages('reactable', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('shinyjs', repos='http://cran.rstudio.com/')"
 
 
-COPY app.R /srv/shiny-server/app.R
 COPY livraison_wilayas.xlsx /srv/shiny-server/livraison_wilayas.xlsx
 
 COPY livraison_wilayas.xlsx /srv/shiny-server/livraison_wilayas.xlsx
@@ -58,6 +57,8 @@ COPY sitpro.xlsx /srv/shiny-server/sitpro.xlsx
 
 COPY zones2.xlsx /srv/shiny-server/zones2.xlsx
 COPY polbnda_dza.json /srv/shiny-server/polbnda_dza.json
+
+COPY app.R /srv/shiny-server/app.R
 
 
 COPY shiny-customized.config /etc/shiny-server/shiny-server.conf
