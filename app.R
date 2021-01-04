@@ -28,15 +28,15 @@ library(shinyBS)
 # library(highcharter)
 # library(tidyverse)
 # library(excelR)
-# library(farver)
-# library(readxl)
+ library(farver)
+ library(readxl)
 
 
-# library(reactable)
+ library(reactable)
 #library(grDevices)
 #library(janitor)
 
-# library(shinyjs)
+ library(shinyjs)
 
 
 # Define UI for application that draws a histogram
