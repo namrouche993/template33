@@ -18,7 +18,7 @@ plica1=rownames(plic)
 ui <- fluidPage(
     
     # Application title
-    titlePanel("Old Faithful USMALGsqaazeazERiiaae Geyjjjjjjjjjjjjjjser Data"),
+    titlePanel("Old Faithful USMALGsqaazeazERiiaae Geyjjjjjjzazejjjjjjjjser Data"),
     
     # Sidebar with a slider input for number of bins
     sidebarLayout(
