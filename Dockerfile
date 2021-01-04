@@ -18,7 +18,7 @@ RUN R -e "install.packages('devtools', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('igraph')"
 RUN R -e "install.packages('zoo')"
 RUN R -e "install.packages('highcharter')"
-RUN R -e "install.packages('farver', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('farver')"
 
 
 RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
