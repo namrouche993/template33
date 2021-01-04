@@ -22,21 +22,22 @@ library(shinyBS)
 # library(leaflet.extras)
 
 
-# library(rgdal)
-# library(sp)
-# library(readxl)
-# library(highcharter)
-# library(tidyverse)
-# library(excelR)
- library(farver)
- library(readxl)
+ library(rgdal)
+ library(sp)
+ library(highcharter)
+ library(tidyverse)
+ library(excelR)
 
 
- library(reactable)
+#  library(farver)
+#  library(readxl)
+
+
+# library(reactable)
 #library(grDevices)
 #library(janitor)
 
- library(shinyjs)
+# library(shinyjs)
 
 
 # Define UI for application that draws a histogram
