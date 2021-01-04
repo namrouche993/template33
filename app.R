@@ -15,18 +15,18 @@ library(shinycssloaders)
 #library(rAmCharts)
 library(shinyBS)
 
-# library(leaflet)
+ library(leaflet)
 
 #library(htmltools)
 
-# library(leaflet.extras)
+ library(leaflet.extras)
 
 
- library(rgdal)
- library(sp)
- library(highcharter)
- library(tidyverse)
- library(excelR)
+# library(rgdal)
+# library(sp)
+# library(highcharter)
+# library(tidyverse)
+# library(excelR)
 
 
   library(farver)
