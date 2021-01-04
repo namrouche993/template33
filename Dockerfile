@@ -12,10 +12,11 @@ RUN apt-get update && apt-get install -y \
     libssh2-1-dev 
 
 RUN R -e "install.packages('devtools', repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('highcharter')"
 
 RUN R -e "install.packages('igraph')"
 RUN R -e "install.packages('zoo')"
+RUN R -e "install.packages('highcharter')"
+
 
 RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('lubridate', repos='http://cran.rstudio.com/')"
