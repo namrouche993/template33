@@ -25,8 +25,8 @@ library(shinyBS)
 # library(rgdal)
 # library(sp)
  library(highcharter)
-# library(tidyverse)
-# library(excelR)
+ library(tidyverse)
+ library(excelR)
 
 
  #  library(farver)
