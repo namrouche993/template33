@@ -32,7 +32,7 @@ RUN R -e "install.packages('rjson')"
 
 RUN R -e "install.packages(c('vctrs','rlang','backports','data.table','jsonlite','broom','htmlwidgets','igraph'))"
 
-#RUN R -e "install.packages('highcharter')"
+RUN R -e "install.packages('https://cran.r-project.org/src/contrib/Archive/highcharter/highcharter_0.7.0.tar.gz')"
 
 
 
