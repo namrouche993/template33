@@ -35,9 +35,9 @@ library(shinyBS)
 
  library(reactable)
 #library(grDevices)
-library(janitor)
+#library(janitor)
 
-# library(shinyjs)
+ library(shinyjs)
 
 
 # Define UI for application that draws a histogram
