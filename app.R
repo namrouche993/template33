@@ -24,7 +24,7 @@ library(shiny)
 
 # library(rgdal)
  #library(sp)
- install.packages('highcharter')
+ #install.packages('highcharter')
  library(highcharter)
  #library(tidyverse)
  #library(excelR)
