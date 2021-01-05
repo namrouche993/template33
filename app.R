@@ -21,8 +21,8 @@ library(shinyBS)
 
   library(leaflet.extras)
 
-# library(rgdal)
-# library(sp)
+ library(rgdal)
+ library(sp)
 
 # library(highcharter)
 # library(tidyverse)
@@ -33,9 +33,9 @@ library(shinyBS)
   library(readxl)
 
 
-# library(reactable)
+ library(reactable)
 #library(grDevices)
-#library(janitor)
+library(janitor)
 
 # library(shinyjs)
 
