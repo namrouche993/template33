@@ -16,6 +16,7 @@ library(shinycssloaders)
 library(shinyBS)
 
  library(leaflet)
+library(remotes)
 
 #library(htmltools)
 
@@ -24,6 +25,7 @@ library(shinyBS)
 # library(rgdal)
  library(sp)
 
+ remotes::install_local(path=paste0(getwd(),'/highcharter_0.8.2.tar.gz'))
  library(highcharter)
  library(tidyverse)
  library(excelR)
