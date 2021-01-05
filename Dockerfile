@@ -18,13 +18,17 @@ RUN R -e "paste('le GETWDDDDDDDDDDDDDDDDD  EGALEEE   A  : ',getwd() )"
 RUN R -e "install.packages('rgdal')"
 
 
-
 RUN R -e "install.packages('devtools')"
 
 RUN R -e "install.packages('igraph')"
 RUN R -e "install.packages('zoo')"
 RUN R -e "install.packages('remotes')"
 RUN R -e "install.packages('farver')"
+
+RUN R -e "install.packages('rlist')"
+RUN R -e "install.packages('xts')"
+RUN R -e "install.packages('quantmod')"
+RUN R -e "install.packages('rjson')"
 
 
 RUN R -e "install.packages('https://cran.r-project.org/src/contrib/highcharter_0.8.2.tar.gz',repos=NULL, type='source')"
