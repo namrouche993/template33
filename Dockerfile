@@ -27,7 +27,7 @@ RUN R -e "install.packages('remotes')"
 RUN R -e "install.packages('farver')"
 
 
-RUN R -e "remotes::install_github('jbkunst/highcharter')"
+RUN R -e "install.packages('highcharter',type='source',repo='https://github.com/jbkunst/highcharter')"
 
 
 
