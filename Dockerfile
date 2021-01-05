@@ -32,19 +32,14 @@ RUN R -e "install.packages('xts')"
 RUN R -e "install.packages('quantmod')"
 RUN R -e "install.packages('rjson')"
 
-RUN R -e "install.packages(c('vctrs','rlang','backports','data.table','jsonlite','broom','htmlwidgets','igraph'))"
+RUN R -e "install.packages(c('vctrs','rlang','backports','data.table','jsonlite','broom','htmlwidgets'))"
 
-RUN R -e "devtools::install_local(paste0(getwd(),'highcharter_0.8.2.tar.gz'))"
 
 #RUN R -e "install.packages('https://cran.r-project.org/bin/macosx/contrib/4.0/highcharter_0.8.2.tgz')"
 
 
 
-
 RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
-
-RUN R -e "devtools::install_local(paste0(getwd(),'/highcharter_0.8.2.tar.gz'))"
-
 
 
 # RUN R -e "install.packages('lubridate', repos='http://cran.rstudio.com/')"
