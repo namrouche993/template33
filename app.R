@@ -29,7 +29,7 @@ library(shinyBS)
 # library(excelR)
 
 
-#  library(farver)
+  library(farver)
 #  library(readxl)
 
 
