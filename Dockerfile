@@ -15,6 +15,8 @@
 
 RUN R -e "paste('le GETWDDDDDDDDDDDDDDDDD  EGALEEE   A  : ',getwd() )"
 
+COPY highcharter_0.8.2.tar.gz /srv/shiny-server/highcharter_0.8.2.tar.gz
+
 #RUN R -e "install.packages('rgdal')"
 
 
@@ -68,7 +70,6 @@ RUN R -e "devtools::install_local('highcharter_0.8.2.tar.gz')"
 #RUN R -e "install.packages('shinyjs', repos='http://cran.rstudio.com/')"
 
 
-COPY highcharter_0.8.2.tar.gz /srv/shiny-server/highcharter_0.8.2.tar.gz
 
 COPY livraison_wilayas.xlsx /srv/shiny-server/livraison_wilayas.xlsx
 
