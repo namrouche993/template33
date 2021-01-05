@@ -17,11 +17,16 @@ RUN R -e "install.packages('devtools')"
 
 RUN R -e "install.packages('igraph')"
 RUN R -e "install.packages('zoo')"
-RUN R -e "install.packages('highcharter')"
+# RUN R -e "install.packages('highcharter')"
 RUN R -e "install.packages('farver')"
 
 
 RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages(paste0(getwd(),'/highcharter_0.8.2.tar.gz'), repos = NULL, type = 'source')"
+
+RUN R -e "install.packages(paste0(getwd(),'/rgdal_1.5-19.tar.gz'), repos = NULL, type = 'source')"
+
+
 # RUN R -e "install.packages('lubridate', repos='http://cran.rstudio.com/')"
 # RUN R -e "install.packages('magrittr', repos='http://cran.rstudio.com/')"
 # RUN R -e "install.packages('glue', repos='http://cran.rstudio.com/')"
@@ -34,7 +39,6 @@ RUN R -e "install.packages('readxl', repos='http://cran.rstudio.com/')"
  RUN R -e "install.packages('shinyBS', repos='http://cran.rstudio.com/')"
  RUN R -e "install.packages('leaflet', repos='http://cran.rstudio.com/')"
  RUN R -e "install.packages('leaflet.extras', repos='http://cran.rstudio.com/')"
- RUN R -e "install.packages('rgdal', repos='http://cran.rstudio.com/')"
  RUN R -e "install.packages('sp', repos='http://cran.rstudio.com/')"
 
 RUN R -e "install.packages('tidyverse', repos='http://cran.rstudio.com/')"
