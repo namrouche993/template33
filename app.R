@@ -24,8 +24,7 @@ library(shiny)
 
 # library(rgdal)
  #library(sp)
-
- remotes::install_local(path=paste0(getwd(),'/highcharter_0.8.2.tar.gz'))
+ install.packages('highcharter')
  library(highcharter)
  #library(tidyverse)
  #library(excelR)
