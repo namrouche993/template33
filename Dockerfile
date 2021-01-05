@@ -32,13 +32,16 @@ RUN R -e "install.packages('rjson')"
 
 RUN R -e "install.packages(c('vctrs','rlang','backports','data.table','jsonlite','broom','htmlwidgets','igraph'))"
 
-RUN R -e "install.packages('https://cran.r-project.org/bin/macosx/contrib/4.0/highcharter_0.8.2.tgz')"
+RUN R -e "devtools::install_local('~/highcharter_0.8.2.tar.gz')"
+
+#RUN R -e "install.packages('https://cran.r-project.org/bin/macosx/contrib/4.0/highcharter_0.8.2.tgz')"
 
 
 
 
 RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
 
+RUN R -e "devtools::install_local('/highcharter_0.8.2.tar.gz')"
 
 
 
@@ -57,6 +60,9 @@ RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
  #RUN R -e "install.packages('sp', repos='http://cran.rstudio.com/')"
 
 RUN R -e "install.packages('tidyverse', repos='http://cran.rstudio.com/')"
+
+RUN R -e "devtools::install_local('highcharter_0.8.2.tar.gz')"
+
 #RUN R -e "install.packages('excelR', repos='http://cran.rstudio.com/')"
 #RUN R -e "install.packages('reactable', repos='http://cran.rstudio.com/')"
 #RUN R -e "install.packages('shinyjs', repos='http://cran.rstudio.com/')"
