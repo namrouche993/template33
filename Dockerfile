@@ -22,7 +22,7 @@ COPY highcharter_0.8.2.tar.gz /srv/shiny-server/highcharter_0.8.2.tar.gz
 
 RUN R -e "install.packages('devtools')"
 
-RUN R -e "install.packages('igraph')"
+#RUN R -e "install.packages('igraph')"
 RUN R -e "install.packages('zoo')"
 RUN R -e "install.packages('remotes')"
 RUN R -e "install.packages('farver')"
