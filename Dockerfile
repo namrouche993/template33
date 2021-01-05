@@ -1,4 +1,4 @@
- FROM rocker/shiny-verse:latest
+  FROM rocker/shiny-verse:latest
 
 # system libraries of general use
 
@@ -30,9 +30,9 @@ RUN R -e "install.packages('xts')"
 RUN R -e "install.packages('quantmod')"
 RUN R -e "install.packages('rjson')"
 
-RUN R -e "install.packages(c('vctrs','rlang','backports','data.table','jsonlite','broom','htmlwidgets'))"
+RUN R -e "install.packages(c('vctrs','rlang','backports','data.table','jsonlite','broom','htmlwidgets','igraph'))"
 
-RUN R -e "install.packages('highcharter')"
+#RUN R -e "install.packages('highcharter')"
 
 
 
