@@ -31,7 +31,7 @@ RUN R -e "install.packages('quantmod')"
 RUN R -e "install.packages('rjson')"
 
 
-RUN R -e "remotes::install_github('jbkunst/highcharter',force = TRUE)"
+RUN R -e "remotes::install_github('jbkunst/highcharter')"
 
 
 
