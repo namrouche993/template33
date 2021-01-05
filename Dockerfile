@@ -16,7 +16,6 @@
 RUN R -e "paste('le GETWDDDDDDDDDDDDDDDDD  EGALEEE   A  : ',getwd() )"
 
 RUN R -e "install.packages('rgdal')"
-RUN R -e "install.packages('highcharter')"
 
 
 
@@ -28,8 +27,7 @@ RUN R -e "install.packages('highcharter')"
 RUN R -e "install.packages('farver')"
 
 
-RUN R -e "install.packages('rgdal', repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('highcharter', repos='http://cran.rstudio.com/')"
+RUN R -e "remotes::install_github('jbkunst/highcharter',dependencies=FALSE)"
 
 
 
