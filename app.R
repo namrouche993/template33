@@ -21,7 +21,7 @@ library(shinyBS)
 
   library(leaflet.extras)
 
-# library(rgdal)
+## library(rgdal)
  library(sp)
 
 # library(highcharter)
