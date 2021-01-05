@@ -31,7 +31,7 @@ RUN R -e "install.packages('quantmod')"
 RUN R -e "install.packages('rjson')"
 
 
-RUN R -e "install.packages('https://cran.r-project.org/src/contrib/highcharter_0.8.2.tar.gz',repos=NULL, type='source')"
+RUN R -e "remotes::install_github('jbkunst/highcharter',force = TRUE)"
 
 
 
