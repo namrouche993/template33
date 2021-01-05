@@ -13,6 +13,8 @@
     libssh2-1-dev 
     
 
+RUN R -e "paste('le GETWDDDDDDDDDDDDDDDDD  EGALEEE   A  : ',getwd() )"
+
 RUN R -e "install.packages('devtools')"
 
 RUN R -e "install.packages('igraph')"
