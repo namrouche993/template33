@@ -5,41 +5,41 @@
 #.Library=paste0(getwd(),"/R-Portable-Win/library")
 
 library(shiny)
-library(fresh)
+#library(fresh)
 #library(shinydashboard)
 #library(shinydashboardPlus)
-library(shinythemes)
-library(shinyWidgets)
-library(shinycssloaders)
+#library(shinythemes)
+#library(shinyWidgets)
+#library(shinycssloaders)
 #library(ECharts2Shiny)
 #library(rAmCharts)
-library(shinyBS)
+#library(shinyBS)
 
- library(leaflet)
-library(remotes)
+ #library(leaflet)
+#library(remotes)
 
 #library(htmltools)
 
-  library(leaflet.extras)
+ # library(leaflet.extras)
 
 # library(rgdal)
- library(sp)
+ #library(sp)
 
  remotes::install_local(path=paste0(getwd(),'/highcharter_0.8.2.tar.gz'))
  library(highcharter)
- library(tidyverse)
- library(excelR)
+ #library(tidyverse)
+ #library(excelR)
 
 
-  library(farver)
-  library(readxl)
+  #library(farver)
+  #library(readxl)
 
 
- library(reactable)
+ #library(reactable)
 #library(grDevices)
 #library(janitor)
 
- library(shinyjs)
+ #library(shinyjs)
 
 
 # Define UI for application that draws a histogram
