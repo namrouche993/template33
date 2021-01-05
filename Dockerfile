@@ -27,7 +27,7 @@ RUN R -e "install.packages('remotes')"
 RUN R -e "install.packages('farver')"
 
 
-RUN R -e "install.versions('highcharter','0.8.2')"
+RUN R -e "install.version('highcharter','0.8.2')"
 
 
 
