@@ -32,8 +32,8 @@ RUN R -e "install.packages('rjson')"
 
 RUN R -e "install.packages(c('vctrs','rlang','backports','data.table','jsonlite','broom','htmlwidgets'))"
 
+RUN R -e "install.packages('highcharter')"
 
-RUN R -e "remotes::install_github('jbkunst/highcharter')"
 
 
 
