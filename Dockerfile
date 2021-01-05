@@ -13,24 +13,29 @@
     libssh2-1-dev 
     
 
-COPY highcharter_0.8.2.tar.gz /srv/shiny-server/highcharter_0.8.2.tar.gz
-
-COPY rgdal_1.5-19.tar.gz /srv/shiny-server/rgdal_1.5-19.tar.gz
-
 RUN R -e "paste('le GETWDDDDDDDDDDDDDDDDD  EGALEEE   A  : ',getwd() )"
+
+RUN R -e "install.packages('rgdal')"
+RUN R -e "install.packages('highcharter')"
+
+
 
 RUN R -e "install.packages('devtools')"
 
 RUN R -e "install.packages('igraph')"
 RUN R -e "install.packages('zoo')"
-# RUN R -e "install.packages('highcharter')"
+RUN R -e "install.packages('highcharter')"
 RUN R -e "install.packages('farver')"
 
 
-RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('/highcharter_0.8.2.tar.gz', repos = NULL, type = 'source')"
+RUN R -e "install.packages('rgdal', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('highcharter', repos='http://cran.rstudio.com/')"
 
-RUN R -e "install.packages('rgdal_1.5-19.tar.gz', repos = NULL, type = 'source')"
+
+
+RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
+
+
 
 
 # RUN R -e "install.packages('lubridate', repos='http://cran.rstudio.com/')"
