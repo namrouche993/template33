@@ -13,6 +13,10 @@
     libssh2-1-dev 
     
 
+COPY highcharter_0.8.2.tar.gz /srv/shiny-server/highcharter_0.8.2.tar.gz
+
+COPY rgdal_1.5-19.tar.gz /srv/shiny-server/rgdal_1.5-19.tar.gz
+
 RUN R -e "paste('le GETWDDDDDDDDDDDDDDDDD  EGALEEE   A  : ',getwd() )"
 
 RUN R -e "install.packages('devtools')"
