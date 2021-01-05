@@ -20,7 +20,7 @@ RUN R -e "install.packages('rgdal')"
 
 RUN R -e "install.packages('devtools')"
 
-RUN R -e "install.packages('igraph')"
+#RUN R -e "install.packages('igraph')"
 RUN R -e "install.packages('zoo')"
 RUN R -e "install.packages('remotes')"
 RUN R -e "install.packages('farver')"
