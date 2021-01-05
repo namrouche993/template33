@@ -30,7 +30,7 @@ library(shinyBS)
 
 
   library(farver)
-#  library(readxl)
+  library(readxl)
 
 
 # library(reactable)
