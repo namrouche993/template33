@@ -22,9 +22,9 @@ RUN R -e "install.packages('farver')"
 
 
 RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages(paste0(getwd(),'/highcharter_0.8.2.tar.gz'), repos = NULL, type = 'source')"
+RUN R -e "install.packages(paste0(getwd(),'highcharter_0.8.2.tar.gz'), repos = NULL, type = 'source')"
 
-RUN R -e "install.packages(paste0(getwd(),'/rgdal_1.5-19.tar.gz'), repos = NULL, type = 'source')"
+RUN R -e "install.packages('/srv/shiny-server/rgdal_1.5-19.tar.gz', repos = NULL, type = 'source')"
 
 
 # RUN R -e "install.packages('lubridate', repos='http://cran.rstudio.com/')"
