@@ -62,6 +62,8 @@ RUN R -e "install.packages('reactable', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('shinyjs', repos='http://cran.rstudio.com/')"
 
 
+COPY highcharter_0.8.2.tar.gz /srv/shiny-server/highcharter_0.8.2.tar.gz
+
 COPY livraison_wilayas.xlsx /srv/shiny-server/livraison_wilayas.xlsx
 
 COPY livraison_wilayas.xlsx /srv/shiny-server/livraison_wilayas.xlsx
