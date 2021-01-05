@@ -21,12 +21,12 @@ library(shinyBS)
 
   library(leaflet.extras)
 
- library(rgdal)
+# library(rgdal)
  library(sp)
 
-# library(highcharter)
-# library(tidyverse)
-# library(excelR)
+ library(highcharter)
+ library(tidyverse)
+ library(excelR)
 
 
   library(farver)
