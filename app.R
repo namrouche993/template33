@@ -42,7 +42,7 @@ library(shiny)
 
 
 # Charger les données
-data("mtcars")
+#data("mtcars")
 df <- mtcars
 # Convertir cyl comme variable de groupement
 df$cyl <- as.factor(df$cyl)
