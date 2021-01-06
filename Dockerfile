@@ -33,7 +33,7 @@ RUN R -e "install.packages('quantmod', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('igraph', repos='http://cran.rstudio.com/')"
 
 
-RUN R -e "install.packages('https://packagemanager.rstudio.com/all/latest/src/contrib/Archive/highcharter/highcharter_0.7.0.tar.gz')"
+RUN R -e "install.packages('https://packagemanager.rstudio.com/all/latest/src/contrib/Archive/highcharter/highcharter_0.8.2.tar.gz')"
 
 
 COPY app.R /srv/shiny-server/app.R
