@@ -25,12 +25,8 @@ library(shiny)
 # library(rgdal)
  #library(sp)
  #install.packages('highcharter')
-#library(devtools)
-#library(htmlwidgets)
-library(tidyverse)
  library(highcharter)
-
-
+ library(tidyverse)
  #library(excelR)
 
 
@@ -50,7 +46,7 @@ library(tidyverse)
 ui <- fluidPage(
 
     # Application title
-    titlePanel("Old Faithful Geyser abaca sffffffffffffsData"),
+    titlePanel("Old Faithful Geyser sffffffffffffsData"),
 
     # Sidebar with a slider input for number of bins 
     sidebarLayout(
