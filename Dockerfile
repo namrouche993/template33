@@ -1,34 +1,38 @@
-# Install R version 3.6
-# FROM r-base:3.6.0
+  FROM rocker/shiny-verse:latest
 
-# Install Ubuntu packages
-# RUN apt-get update && apt-get upgrade -y && apt-get install -y  \
- #   sudo \
- #   gdebi-core \
- #   pandoc \
- #   pandoc-citeproc \
- #   libcurl4-gnutls-dev \
- #   libcairo2-dev \
- #   libxt-dev \
- #   xtail \
-#    wget \
-#    libudunits2-dev \
-#    libgdal-dev
+ Install Ubuntu packages
+ RUN apt-get update && apt-get upgrade -y && apt-get install -y  \
+   sudo \
+   gdebi-core \
+   pandoc \
+   pandoc-citeproc \
+   libcurl4-gnutls-dev \
+   libcairo2-dev \
+   libxt-dev \
+   xtail \
+    wget \
+    libudunits2-dev \
+    libgdal-dev
 
- FROM rocker/shiny-verse:latest
+
+
+
+
+#  FROM rocker/shiny-verse:latest
 
 # system libraries of general use
 
-RUN apt-get update && apt-get upgrade -y && apt-get install -y  \
-    sudo \
-   pandoc \
-    pandoc-citeproc \
-    libcurl4-gnutls-dev \
-    libcairo2-dev \
-    libxt-dev \
-    libssl-dev \
-    libssh2-1-dev 
-    
+# RUN apt-get update && apt-get upgrade -y && apt-get install -y  \
+#     sudo \
+#    pandoc \
+#     pandoc-citeproc \
+#     libcurl4-gnutls-dev \
+#     libcairo2-dev \
+#     libxt-dev \
+#     libssl-dev \
+#     libssh2-1-dev 
+
+
 
 RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
 
