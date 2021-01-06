@@ -1,6 +1,5 @@
   FROM rocker/shiny-verse:latest
 
- Install Ubuntu packages
  RUN apt-get update && apt-get upgrade -y && apt-get install -y  \
      sudo \
     pandoc \
@@ -9,10 +8,7 @@
      libcairo2-dev \
      libxt-dev \
      libssl-dev \
-     libssh2-1-dev \   
-     wget \
-     libudunits2-dev \
-     libgdal-dev
+     libssh2-1-dev
 
 # sudo \
 #   gdebi-core \
@@ -28,27 +24,9 @@
 
 
 
-
-
-#  FROM rocker/shiny-verse:latest
-
-# system libraries of general use
-
-# RUN apt-get update && apt-get upgrade -y && apt-get install -y  \
-#     sudo \
-#    pandoc \
-#     pandoc-citeproc \
-#     libcurl4-gnutls-dev \
-#     libcairo2-dev \
-#     libxt-dev \
-#     libssl-dev \
-#     libssh2-1-dev 
-
-
-
 RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
 
-RUN R -e "install.packages('highcharter')"
+RUN R -e "install.packages('highcharter',Ncpus=6)"
 
 
 COPY app.R /srv/shiny-server/app.R
