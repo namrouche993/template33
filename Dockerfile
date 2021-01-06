@@ -24,8 +24,6 @@
 
 
 RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
-
-RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('rlist', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('zoo', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('xts', repos='http://cran.rstudio.com/')"
