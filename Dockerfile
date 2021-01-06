@@ -1,30 +1,23 @@
-FROM rocker/shiny:latest
-
+ FROM rocker/shiny-verse:latest
 
 # system libraries of general use
 
-RUN apt-get update -qq && apt-get -y --no-install-recommends install \
-    libxml2-dev \
+ RUN apt-get update && apt-get install -y \
+    sudo \
+   pandoc \
+    pandoc-citeproc \
+    libcurl4-gnutls-dev \
     libcairo2-dev \
-    libsqlite3-dev \
-    libmariadbd-dev \
-    libpq-dev \
-    libssh2-1-dev \
-    unixodbc-dev \
-    libcurl4-openssl-dev \
-    libssl-dev
-
-## update system libraries
-RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt-get clean
-
-
-
-
+    libxt-dev \
+    libssl-dev \
+    libssh2-1-dev 
+    
 
 RUN R -e "paste('le GETWDDDDDDDDDDDDDDDDD  EGALEEE   A  : ',getwd() )"
 
+COPY highcharter_0.8.2.tar.gz /srv/shiny-server/highcharter_0.8.2.tar.gz
+
+#RUN R -e "install.packages('rgdal')"
 
 
 RUN R -e "install.packages('devtools')"
@@ -32,9 +25,6 @@ RUN R -e "install.packages('devtools')"
 #RUN R -e "install.packages('igraph')"
 RUN R -e "install.packages('zoo')"
 RUN R -e "install.packages('remotes')"
-
-#RUN R -e "install.packages('rgdal')"
-
 RUN R -e "install.packages('farver')"
 
 RUN R -e "install.packages('rlist')"
@@ -44,7 +34,10 @@ RUN R -e "install.packages('rjson')"
 
 RUN R -e "install.packages(c('vctrs','rlang','backports','data.table','jsonlite','broom','htmlwidgets'))"
 
-RUN R -e "install.packages('highcharter')"
+
+#RUN R -e "install.packages('https://cran.r-project.org/bin/macosx/contrib/4.0/highcharter_0.8.2.tgz')"
+
+
 
 RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
 
