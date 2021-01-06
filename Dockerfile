@@ -10,15 +10,17 @@
     libcairo2-dev \
     libxt-dev \
     libssl-dev \
-    libssh2-1-dev \
-    libicu-devel \
-    epel-release \ 
-    glpk-devel \
-    gmp-devel \
-    libxml2-devel \
-    libcurl-devel \
-    openssl-devel \
-    zlib-devel
+    libssh2-1-dev
+ 
+ RUN yum install -y libicu-devel \
+ yum install -y epel-release  \
+ yum install -y glpk-devel \
+ yum install -y gmp-devel \
+ yum install -y libxml2-devel \
+ yum install -y libcurl-devel \
+ yum install -y openssl-devel \
+ yum install -y zlib-devel
+
     
 
 RUN R -e "paste('le GETWDDDDDDDDDDDDDDDDD  EGALEEE   A  : ',getwd() )"
