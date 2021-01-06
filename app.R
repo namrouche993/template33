@@ -70,7 +70,7 @@ server <- function(input, output) {
 
     output$distPlot <- renderHighchart({
      
-     mtcars %>% hchart('scatter', hcaes(x = wt, y = mpg))
+    hchart(mtcars,'scatter',hcaes(x=wt,y=mpg))    
      
     })
 }
