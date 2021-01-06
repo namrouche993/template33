@@ -61,7 +61,7 @@ RUN R -e "install.packages(c('vctrs','rlang','backports','data.table','jsonlite'
 RUN R -e "BiocManager::install(c('highcharter'))"
 
 
-RUN R -e "install.packages('tidyverse', repos='http://cran.rstudio.com/')"
+#RUN R -e "install.packages('tidyverse', repos='http://cran.rstudio.com/')"
 
 RUN R -e "install.packages('highcharter')"
 
