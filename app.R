@@ -26,7 +26,7 @@ library(shiny)
  #library(sp)
  #install.packages('highcharter')
  library(highcharter)
- #library(tidyverse)
+ library(tidyverse)
  #library(excelR)
 
 
@@ -40,14 +40,6 @@ library(shiny)
 
  #library(shinyjs)
 
-
-# Charger les données
-#data("mtcars")
-df <- mtcars
-# Convertir cyl comme variable de groupement
-df$cyl <- as.factor(df$cyl)
-# Inspecter les données
-#head(df[, c("wt", "mpg", "cyl", "qsec")], 4)
 
 
 # Define UI for application that draws a histogram
@@ -78,7 +70,7 @@ server <- function(input, output) {
 
     output$distPlot <- renderHighchart({
      
-     df %>% hchart('scatter', hcaes(x = wt, y = mpg))
+     mtcars %>% hchart('scatter', hcaes(x = wt, y = mpg))
      
     })
 }
