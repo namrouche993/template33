@@ -12,6 +12,8 @@ RUN apt-get update && apt-get install -y \
     wget
       
 
+RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
+
 RUN R -e "paste('le GETWDDDDDDDDDDDDDDDDD  EGALEEE   A  : ',getwd() )"
 
 #COPY highcharter_0.8.2.tar.gz /srv/shiny-server/highcharter_0.8.2.tar.gz
@@ -39,7 +41,6 @@ RUN R -e "install.packages(c('vctrs','rlang','backports','data.table','jsonlite'
 
 
 
-RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
 
 
 # RUN R -e "install.packages('lubridate', repos='http://cran.rstudio.com/')"
