@@ -42,7 +42,7 @@ RUN R -e "install.packages(c('vctrs','rlang','backports','data.table','jsonlite'
  
 
 
-RUN R -e "BiocManager::install(c('rlist',highcharter))"
+RUN R -e "BiocManager::install(c('rlist','highcharter'))"
 
 
 #RUN R -e "install.packages('https://cran.r-project.org/bin/macosx/contrib/4.0/highcharter_0.8.2.tgz')"
