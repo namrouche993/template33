@@ -37,7 +37,7 @@ RUN R -e "install.packages('xts')"
 RUN R -e "install.packages('quantmod')"
 RUN R -e "install.packages('rjson')"
 
-RUN R -e "install.packages(c('vctrs','rlang','backports','data.table','jsonlite','broom','htmlwidgets'))"
+RUN R -e "install.packages(c('vctrs','rlang','backports','data.table','jsonlite','broom'))"
 
 
 #RUN R -e "install.packages('https://cran.r-project.org/bin/macosx/contrib/4.0/highcharter_0.8.2.tgz')"
