@@ -1,37 +1,39 @@
-  FROM rocker/shiny-verse:latest
+# Install R version 3.6
+FROM r-base:3.6.0
 
-# system libraries of general use
-
- RUN apt-get update && apt-get install -y \
+# Install Ubuntu packages
+RUN apt-get update && apt-get upgrade -y && apt-get install -y  \
     sudo \
-   pandoc \
+    gdebi-core \
+    pandoc \
     pandoc-citeproc \
     libcurl4-gnutls-dev \
     libcairo2-dev \
     libxt-dev \
-    libssl-dev \
-    libssh2-1-dev 
-    
-RUN apt-get install r-cran-ggplot2
+    xtail \
+    wget \
+    libudunits2-dev \
+    libgdal-dev
 
-RUN R -e "paste('le GETWDDDDDDDDDDDDDDDDD  EGALEEE   A  : ',getwd() )"
+# Install R packages that are required
+RUN R -e "install.packages(c('remotes', 'tidyr', 'dplyr', 'ggplot2', 'stringr','shiny'), repos='http://cran.rstudio.com/')"
+RUN R -e "remotes::install_github('nik01010/dashboardthemes')"
 
-#COPY highcharter_0.8.2.tar.gz /srv/shiny-server/highcharter_0.8.2.tar.gz
+# Download and install ShinyServer (latest version)
+RUN wget --no-verbose https://download3.rstudio.org/ubuntu-14.04/x86_64/VERSION -O "version.txt" && \
+    VERSION=$(cat version.txt)  && \
+    wget --no-verbose "https://download3.rstudio.org/ubuntu-14.04/x86_64/shiny-server-$VERSION-amd64.deb" -O ss-latest.deb && \
+    gdebi -n ss-latest.deb && \
+    rm -f version.txt ss-latest.deb
 
-#RUN R -e "install.packages('rgdal')"
+# Copy configuration files into the Docker image
+COPY shiny-server.conf  /etc/shiny-server/shiny-server.conf
+COPY /app /srv/shiny-server/
 
-
-RUN R -e "install.packages('highcharter')"
-
-COPY app.R /srv/shiny-server/app.R
-
-
-COPY shiny-customized.config /etc/shiny-server/shiny-server.conf
-
+# Make the ShinyApp available at port 80
 EXPOSE 8080
 
-USER shiny
+# Copy further configuration files into the Docker image
+COPY shiny-server.sh /usr/bin/shiny-server.sh
 
-# avoid s6 initialization
-# see https://github.com/rocker-org/shiny/issues/79
-CMD ["/usr/bin/shiny-server"]
+CMD ["/usr/bin/shiny-server.sh"]
