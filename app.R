@@ -25,9 +25,10 @@ library(shiny)
 # library(rgdal)
  #library(sp)
  #install.packages('highcharter')
- library(highcharter)
+ #library(highcharter)
  library(tidyverse)
- #library(excelR)
+library(reactable) 
+#library(excelR)
 
 
   #library(farver)
@@ -60,7 +61,7 @@ ui <- fluidPage(
 
         # Show a plot of the generated distribution
         mainPanel(
-           highchartOutput("distPlot")
+           reactableOutput("distPlot")
         )
     )
 )
@@ -68,9 +69,9 @@ ui <- fluidPage(
 # Define server logic required to draw a histogram
 server <- function(input, output) {
 
-    output$distPlot <- renderHighchart({
+    output$distPlot <- renderReactable({
      
-    hchart(mtcars,'scatter',hcaes(x=wt,y=mpg))    
+     reactable(mtcars)
      
     })
 }
