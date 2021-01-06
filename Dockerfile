@@ -1,8 +1,8 @@
- FROM rocker/shiny-verse:latest
+  FROM rocker/shiny-verse:latest
 
 # system libraries of general use
 
- RUN apt-get update && && apt-get install -y \
+ RUN apt-get update && apt-get install -y \
     sudo \
    pandoc \
     pandoc-citeproc \
@@ -11,6 +11,7 @@
     libxt-dev \
     libssl-dev \
     libssh2-1-dev 
+      
       
 
 RUN R -e "paste('le GETWDDDDDDDDDDDDDDDDD  EGALEEE   A  : ',getwd() )"
