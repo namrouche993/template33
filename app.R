@@ -47,7 +47,7 @@ df <- mtcars
 # Convertir cyl comme variable de groupement
 df$cyl <- as.factor(df$cyl)
 # Inspecter les données
-head(df[, c("wt", "mpg", "cyl", "qsec")], 4)
+#head(df[, c("wt", "mpg", "cyl", "qsec")], 4)
 
 
 # Define UI for application that draws a histogram
