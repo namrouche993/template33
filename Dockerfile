@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y \
     xtail \
     wget
       
+RUN apt-get r-cran
 
 RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
 
