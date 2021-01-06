@@ -20,7 +20,7 @@ RUN R -e 'devtools::install_github("rstudio/shiny")' \
     
 RUN R -e "paste('le GETWDDDDDDDDDDDDDDDDD  EGALEEE   A  : ',getwd() )"
 
-COPY highcharter_0.8.2.tar.gz /srv/shiny-server/highcharter_0.8.2.tar.gz
+#COPY highcharter_0.8.2.tar.gz /srv/shiny-server/highcharter_0.8.2.tar.gz
 
 #RUN R -e "install.packages('rgdal')"
 
@@ -44,7 +44,7 @@ RUN R -e "install.packages(c('vctrs','rlang','backports','data.table','jsonlite'
 
 
 
-RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
+#RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
 
 
 # RUN R -e "install.packages('lubridate', repos='http://cran.rstudio.com/')"
@@ -70,6 +70,28 @@ RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
 #RUN R -e "install.packages('excelR', repos='http://cran.rstudio.com/')"
 #RUN R -e "install.packages('reactable', repos='http://cran.rstudio.com/')"
 #RUN R -e "install.packages('shinyjs', repos='http://cran.rstudio.com/')"
+
+
+RUN apt-get -y install gdebi-core libxt-dev \
+  && wget --no-verbose https://s3.amazonaws.com/rstudio-shiny-server-os-build/ubuntu-12.04/x86_64/VERSION -O "version.txt" \
+  && VERSION=$(cat version.txt) \
+  && wget --no-verbose "https://s3.amazonaws.com/rstudio-shiny-server-os-build/ubuntu-12.04/x86_64/shiny-server-$VERSION-amd64.deb" -O ss-latest.deb \
+  && gdebi -n ss-latest.deb \
+  && rm -f version.txt ss-latest.deb \
+  && cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/ \
+  && rm -rf /var/lib/apt/lists/* \
+  && mkdir -p /var/log/shiny-server \
+  && chown shiny.shiny /var/log/shiny-server \
+  && mkdir -p /etc/services.d/shiny-server \
+  && echo '#!/usr/bin/with-contenv bash \
+          \n exec shiny-server > /var/log/shiny-server.log' \
+          > /etc/services.d/shiny-server/run
+
+### RServe
+RUN apt-get update \
+  && apt-get install -y libssl-dev wget curl \
+  && wget https://www.rforge.net/src/contrib/Rserve_1.8-5.tar.gz \
+  && /usr/local/bin/R CMD INSTALL Rserve_1.8-5.tar.gz
 
 
 
