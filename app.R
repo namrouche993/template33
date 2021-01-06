@@ -41,6 +41,15 @@ library(shiny)
  #library(shinyjs)
 
 
+# Charger les données
+data("mtcars")
+df <- mtcars
+# Convertir cyl comme variable de groupement
+df$cyl <- as.factor(df$cyl)
+# Inspecter les données
+head(df[, c("wt", "mpg", "cyl", "qsec")], 4)
+
+
 # Define UI for application that draws a histogram
 ui <- fluidPage(
 
@@ -59,7 +68,7 @@ ui <- fluidPage(
 
         # Show a plot of the generated distribution
         mainPanel(
-           plotOutput("distPlot")
+           highchartOutput("distPlot")
         )
     )
 )
@@ -67,13 +76,10 @@ ui <- fluidPage(
 # Define server logic required to draw a histogram
 server <- function(input, output) {
 
-    output$distPlot <- renderPlot({
-        # generate bins based on input$bins from ui.R
-        x    <- faithful[, 2]
-        bins <- seq(min(x), max(x), length.out = input$bins + 1)
-
-        # draw the histogram with the specified number of bins
-        hist(x, breaks = bins, col = 'darkgray', border = 'white')
+    output$distPlot <- renderHighchart({
+     
+     df %>% hchart('scatter', hcaes(x = wt, y = mpg))
+     
     })
 }
 
