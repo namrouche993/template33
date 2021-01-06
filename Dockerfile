@@ -24,9 +24,6 @@ RUN R -e "install.packages('remotes')"
 RUN R -e "install.packages('farver')"
 
 
-RUN R -e "BiocManager::install(c('rlist',highcharter))"
-RUN R -e "remotes::install_github("jbkunst/highcharter")"
-
 
 RUN R -e "paste('le GETWDDDDDDDDDDDDDDDDD  EGALEEE   A  : ',getwd() )"
 
@@ -40,6 +37,13 @@ RUN R -e "install.packages('quantmod')"
 RUN R -e "install.packages('rjson')"
 
 RUN R -e "install.packages(c('vctrs','rlang','backports','data.table','jsonlite','broom','htmlwidgets'))"
+
+
+RUN R -e "remotes::install_github("jbkunst/highcharter")"
+
+
+
+RUN R -e "BiocManager::install(c('rlist',highcharter))"
 
 
 #RUN R -e "install.packages('https://cran.r-project.org/bin/macosx/contrib/4.0/highcharter_0.8.2.tgz')"
