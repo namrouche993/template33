@@ -29,6 +29,8 @@ RUN R -e "install.packages('zoo', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('xts', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('quantmod', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('igraph', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('devtools', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('remotes', repos='http://cran.rstudio.com/')"
 
 
 RUN R -e "install.packages('https://packagemanager.rstudio.com/all/latest/src/contrib/Archive/highcharter/highcharter_0.7.0.tar.gz')"
