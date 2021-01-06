@@ -2,7 +2,7 @@
 
 # system libraries of general use
 
- RUN apt-get update && && apt-get install -y autoconf automake libtool procps \
+ RUN apt-get update && && apt-get install -y \
     sudo \
    pandoc \
     pandoc-citeproc \
@@ -19,6 +19,7 @@ RUN R -e "paste('le GETWDDDDDDDDDDDDDDDDD  EGALEEE   A  : ',getwd() )"
 
 #RUN R -e "install.packages('rgdal')"
 
+RUN R -e "install.packages('BiocManager')"
 
 RUN R -e "install.packages('devtools')"
 
@@ -56,7 +57,7 @@ RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
  #RUN R -e "install.packages('leaflet.extras', repos='http://cran.rstudio.com/')"
  #RUN R -e "install.packages('sp', repos='http://cran.rstudio.com/')"
 
-RUN R -e "install.packages('https://packagemanager.rstudio.com/all/__linux__/focal/latest/src/contrib/highcharter_0.8.2.tar.gz')"
+RUN R -e "BiocManager::install(c('highcharter'))"
 
 
 RUN R -e "install.packages('tidyverse', repos='http://cran.rstudio.com/')"
