@@ -1,4 +1,4 @@
-  FROM rocker/shiny-verse:latest
+FROM rocker/shiny:latest
 
 
 # system libraries of general use
