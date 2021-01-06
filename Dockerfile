@@ -9,9 +9,10 @@
      libcairo2-dev \
      libxt-dev \
      libssl-dev \
-     libssh2-1-dev \
-     libcurl4-gnutls-dev
-
+     libssh2-1-dev \   
+     wget \
+     libudunits2-dev \
+     libgdal-dev
 
 # sudo \
 #   gdebi-core \
