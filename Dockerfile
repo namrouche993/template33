@@ -13,7 +13,15 @@
     libssl-dev \
     libssh2-1-dev
     
-    
+
+
+
+RUN R -e "install.packages('devtools')"
+
+#RUN R -e "install.packages('igraph')"
+RUN R -e "install.packages('zoo')"
+RUN R -e "install.packages('remotes')"
+
 RUN R -e "install.packages('shinyBS', repos='https://cran.r-project.org/')" \
 && sudo su - -c "R -e \"options(unzip = 'internal'); devtools::install_version('highcharter', version = '0.5.0', repos = 'https://cran.r-project.org/')\"" \
 RUN R -e "download.file(url = 'http://cran.r-project.org/src/contrib/Archive/highcharter/highcharter_0.3.0.tar.gz', destfile = 'highcharter_0.3.0.tar.gz')"
@@ -26,12 +34,6 @@ RUN R -e "paste('le GETWDDDDDDDDDDDDDDDDD  EGALEEE   A  : ',getwd() )"
 
 #RUN R -e "install.packages('rgdal')"
 
-
-RUN R -e "install.packages('devtools')"
-
-#RUN R -e "install.packages('igraph')"
-RUN R -e "install.packages('zoo')"
-RUN R -e "install.packages('remotes')"
 RUN R -e "install.packages('farver')"
 
 RUN R -e "install.packages('rlist')"
