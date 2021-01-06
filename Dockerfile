@@ -1,23 +1,23 @@
- FROM rocker/shiny-verse:latest
+FROM rocker/tidyverse:3.4
+MAINTAINER Jaehyeon Kim <dottami@gmail.com>
 
-# system libraries of general use
+#### build from https://github.com/rocker-org/shiny in production
+#### need to build httpuv from source when installing shiny from GitHub
+#### procps for monitoring
+RUN apt-get update \
+  && apt-get install -y autoconf automake libtool procps
 
- RUN apt-get update && apt-get install -y \
-    sudo \
-   pandoc \
-    pandoc-citeproc \
-    libcurl4-gnutls-dev \
-    libcairo2-dev \
-    libxt-dev \
-    libssl-dev \
-    libssh2-1-dev \    
-    apt-utils \
-    libxml2-dev \
-    zlib1g-dev \
-    default-jdk \
-    default-jre \
+#### promises and some necessary packages
+#### https://rstudio.github.io/promises/index.html
+RUN R -e 'devtools::install_github("rstudio/shiny")' \
+  && R -e 'devtools::install_github("rstudio/rmarkdown")' \
+  && R -e 'devtools::install_github("ramnathv/htmlwidgets@async")' \
+  && R -e 'devtools::install_github("jcheng5/plotly@joe/feature/async")' \
+  && R -e 'devtools::install_github("rstudio/DT@async")' \
+  && R -e 'install.packages("highcharter")' \
+  && R -e 'install.packages("future")'
 
-
+    
 RUN R -e "paste('le GETWDDDDDDDDDDDDDDDDD  EGALEEE   A  : ',getwd() )"
 
 COPY highcharter_0.8.2.tar.gz /srv/shiny-server/highcharter_0.8.2.tar.gz
