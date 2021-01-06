@@ -1,5 +1,6 @@
   FROM rocker/shiny-verse:latest
 
+
 # system libraries of general use
 
  RUN apt-get update && apt-get install -y \
@@ -11,17 +12,14 @@
     libxt-dev \
     libssl-dev \
     libssh2-1-dev
- 
- RUN yum install -y libicu-devel \
- yum install -y epel-release  \
- yum install -y glpk-devel \
- yum install -y gmp-devel \
- yum install -y libxml2-devel \
- yum install -y libcurl-devel \
- yum install -y openssl-devel \
- yum install -y zlib-devel
-
     
+    
+RUN R -e "install.packages('shinyBS', repos='https://cran.r-project.org/')" \
+&& sudo su - -c "R -e \"options(unzip = 'internal'); devtools::install_version('highcharter', version = '0.5.0', repos = 'https://cran.r-project.org/')\"" \
+RUN R -e "download.file(url = 'http://cran.r-project.org/src/contrib/Archive/highcharter/highcharter_0.3.0.tar.gz', destfile = 'highcharter_0.3.0.tar.gz')"
+RUN R -e "install.packages(pkgs='highcharter_0.3.0.tar.gz', type='source', repos=NULL)"
+RUN R -e "unlink('highcharter_0.3.0.tar.gz')"
+
 
 RUN R -e "paste('le GETWDDDDDDDDDDDDDDDDD  EGALEEE   A  : ',getwd() )"
 
