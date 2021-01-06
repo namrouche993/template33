@@ -16,8 +16,8 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y  \
     libgdal-dev
 
 # Install R packages that are required
-RUN R -e "install.packages(c('remotes', 'tidyr', 'dplyr', 'ggplot2', 'stringr','shiny'), repos='http://cran.rstudio.com/')"
-RUN R -e "remotes::install_github('nik01010/dashboardthemes')"
+RUN R -e "install.packages(c('shiny'), repos='http://cran.rstudio.com/')"
+#RUN R -e "remotes::install_github('nik01010/dashboardthemes')"
 
 # Download and install ShinyServer (latest version)
 RUN wget --no-verbose https://download3.rstudio.org/ubuntu-14.04/x86_64/VERSION -O "version.txt" && \
