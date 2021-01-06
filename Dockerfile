@@ -26,7 +26,7 @@
 
 RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
 
-RUN R -e "install.packages('highcharter',Ncpus=6)"
+RUN R -e "install.packages('https://packagemanager.rstudio.com/all/latest/src/contrib/Archive/highcharter/highcharter_0.7.0.tar.gz')"
 
 
 COPY app.R /srv/shiny-server/app.R
