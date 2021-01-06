@@ -61,10 +61,10 @@ RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
  #RUN R -e "install.packages('leaflet.extras', repos='http://cran.rstudio.com/')"
  #RUN R -e "install.packages('sp', repos='http://cran.rstudio.com/')"
 
-RUN R -e "install.packages('https://packagemanager.rstudio.com/all/__linux__/focal/latest/src/contrib/highcharter_0.8.2.tar.gz')"
+#RUN R -e "install.packages('https://packagemanager.rstudio.com/all/__linux__/focal/latest/src/contrib/highcharter_0.8.2.tar.gz')"
 
 
-RUN R -e "install.packages('tidyverse', repos='http://cran.rstudio.com/')"
+#RUN R -e "install.packages('tidyverse', repos='http://cran.rstudio.com/')"
 
 
 #RUN R -e "install.packages('excelR', repos='http://cran.rstudio.com/')"
