@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     xtail \
     wget
       
-RUN apt-get r-cran
+
 
 RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
 
@@ -39,9 +39,7 @@ RUN R -e "install.packages('rjson')"
 
 RUN R -e "install.packages(c('vctrs','rlang','backports','data.table','jsonlite','broom','htmlwidgets'))"
 
-
-RUN R -e "remotes::install_github("jbkunst/highcharter")"
-
+ 
 
 
 RUN R -e "BiocManager::install(c('rlist',highcharter))"
@@ -50,7 +48,7 @@ RUN R -e "BiocManager::install(c('rlist',highcharter))"
 #RUN R -e "install.packages('https://cran.r-project.org/bin/macosx/contrib/4.0/highcharter_0.8.2.tgz')"
 
 
-
+RUN R -e "remotes::install_github('jbkunst/highcharter')"
 
 
 # RUN R -e "install.packages('lubridate', repos='http://cran.rstudio.com/')"
