@@ -3,16 +3,27 @@
 
 # system libraries of general use
 
- RUN apt-get update && apt-get install -y \
-    sudo \
-   pandoc \
-    pandoc-citeproc \
-    libcurl4-gnutls-dev \
+RUN apt-get update -qq && apt-get -y --no-install-recommends install \
+    libxml2-dev \
     libcairo2-dev \
-    libxt-dev \
-    libssl-dev \
-    libssh2-1-dev
-    
+    libsqlite3-dev \
+    libmariadbd-dev \
+    libpq-dev \
+    libssh2-1-dev \
+    unixodbc-dev \
+    libcurl4-openssl-dev \
+    libssl-dev
+
+## update system libraries
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get clean
+
+
+
+
+
+RUN R -e "paste('le GETWDDDDDDDDDDDDDDDDD  EGALEEE   A  : ',getwd() )"
 
 
 
@@ -21,16 +32,6 @@ RUN R -e "install.packages('devtools')"
 #RUN R -e "install.packages('igraph')"
 RUN R -e "install.packages('zoo')"
 RUN R -e "install.packages('remotes')"
-
-RUN R -e "install.packages('shinyBS', repos='https://cran.r-project.org/')" \
-&& sudo su - -c "R -e \"options(unzip = 'internal'); devtools::install_version('highcharter', version = '0.5.0', repos = 'https://cran.r-project.org/')\"" \
-RUN R -e "download.file(url = 'http://cran.r-project.org/src/contrib/Archive/highcharter/highcharter_0.3.0.tar.gz', destfile = 'highcharter_0.3.0.tar.gz')"
-RUN R -e "install.packages(pkgs='highcharter_0.3.0.tar.gz', type='source', repos=NULL)"
-RUN R -e "unlink('highcharter_0.3.0.tar.gz')"
-
-
-RUN R -e "paste('le GETWDDDDDDDDDDDDDDDDD  EGALEEE   A  : ',getwd() )"
-
 
 #RUN R -e "install.packages('rgdal')"
 
