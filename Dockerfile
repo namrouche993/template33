@@ -2,17 +2,28 @@
 
  Install Ubuntu packages
  RUN apt-get update && apt-get upgrade -y && apt-get install -y  \
-   sudo \
-   gdebi-core \
-   pandoc \
-   pandoc-citeproc \
-   libcurl4-gnutls-dev \
-   libcairo2-dev \
-   libxt-dev \
-   xtail \
-    wget \
-    libudunits2-dev \
-    libgdal-dev
+     sudo \
+    pandoc \
+     pandoc-citeproc \
+     libcurl4-gnutls-dev \
+     libcairo2-dev \
+     libxt-dev \
+     libssl-dev \
+     libssh2-1-dev \
+     libcurl4-gnutls-dev
+
+
+# sudo \
+#   gdebi-core \
+#   pandoc \
+#   pandoc-citeproc \
+#   libcurl4-gnutls-dev \
+#   libcairo2-dev \
+#   libxt-dev \
+#   xtail \
+#    wget \
+#    libudunits2-dev \
+#    libgdal-dev
 
 
 
