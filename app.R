@@ -16,17 +16,17 @@ library(shiny)
 #library(shinyBS)
 
  #library(leaflet)
-library(remotes)
+#library(remotes)
 
-library(htmltools)
+#library(htmltools)
 
  # library(leaflet.extras)
 
 # library(rgdal)
  #library(sp)
  #install.packages('highcharter')
-library(devtools)
-library(htmlwidgets)
+#library(devtools)
+#library(htmlwidgets)
 library(tidyverse)
  library(highcharter)
 
@@ -50,7 +50,7 @@ library(tidyverse)
 ui <- fluidPage(
 
     # Application title
-    titlePanel("Old Faithful Geyser sffffffffffffsData"),
+    titlePanel("Old Faithful Geyser abaca sffffffffffffsData"),
 
     # Sidebar with a slider input for number of bins 
     sidebarLayout(
