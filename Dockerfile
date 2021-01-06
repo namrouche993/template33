@@ -10,7 +10,14 @@
     libcairo2-dev \
     libxt-dev \
     libssl-dev \
-    libssh2-1-dev 
+    libssh2-1-dev \
+    libicu-dev \
+    libglpk-dev \
+    libgmp3-dev \
+    libxml2-dev \
+    libcurl4-openssl-dev \
+    libssl-dev \
+    zlib1g-dev
       
       
 
@@ -58,10 +65,13 @@ RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
  #RUN R -e "install.packages('leaflet.extras', repos='http://cran.rstudio.com/')"
  #RUN R -e "install.packages('sp', repos='http://cran.rstudio.com/')"
 
+
 RUN R -e "BiocManager::install(c('highcharter'))"
 
 
 RUN R -e "install.packages('tidyverse', repos='http://cran.rstudio.com/')"
+
+RUN R -e "install.packages('highcharter')"
 
 
 #RUN R -e "install.packages('excelR', repos='http://cran.rstudio.com/')"
