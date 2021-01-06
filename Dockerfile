@@ -10,8 +10,7 @@
     libcairo2-dev \
     libxt-dev \
     libssl-dev \
-    libssh2-1-dev 
-    
+    libssh2-1-dev \    
     apt-utils \
     libxml2-dev \
     zlib1g-dev \
