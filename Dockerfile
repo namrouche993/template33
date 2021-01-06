@@ -12,9 +12,12 @@
     libssl-dev \
     libssh2-1-dev 
     
+    apt-utils \
+    libxml2-dev \
+    zlib1g-dev \
+    default-jdk \
+    default-jre \
 
-RUN cd mxnet; make -j$(nproc)\
-&& Rscript -e "install.packages('devtools', repo = 'https://cran.rstudio.com')"    
 
 RUN R -e "paste('le GETWDDDDDDDDDDDDDDDDD  EGALEEE   A  : ',getwd() )"
 
