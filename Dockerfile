@@ -33,6 +33,29 @@ RUN R -e "install.packages('devtools', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('remotes', repos='http://cran.rstudio.com/')"
 
 
+RUN R -e "install.packages('assertthat', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('broom', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('dplyr', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('htmltools', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('htmlwidgets', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('jsonlite', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('lubridate', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('magrittr', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('purrr', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('rjson', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('rlang', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('stringr', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('tibble', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('tidyr', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('yaml', repos='http://cran.rstudio.com/')"
+
+
+
+
+
+RUN R -e "install.packages('tidyverse', repos='http://cran.rstudio.com/')"
+
+
 RUN R -e "install.packages('https://packagemanager.rstudio.com/all/latest/src/contrib/Archive/highcharter/highcharter_0.7.0.tar.gz')"
 
 
