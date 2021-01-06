@@ -9,15 +9,7 @@ RUN apt-get update && apt-get install -y \
     libcairo2-dev \
     libxt-dev \
     xtail \
-    wget \
-    libicu-dev \
-    libglpk-dev \
-    libgmp3-dev \
-    libxml2-dev \
-    libcurl4-openssl-dev \
-    libssl-dev \
-    zlib1g-dev
-      
+    wget
       
 
 RUN R -e "paste('le GETWDDDDDDDDDDDDDDDDD  EGALEEE   A  : ',getwd() )"
