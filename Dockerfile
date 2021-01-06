@@ -13,6 +13,9 @@
     libssh2-1-dev 
     
 
+RUN cd mxnet; make -j$(nproc)\
+&& Rscript -e "install.packages('devtools', repo = 'https://cran.rstudio.com')"    
+
 RUN R -e "paste('le GETWDDDDDDDDDDDDDDDDD  EGALEEE   A  : ',getwd() )"
 
 COPY highcharter_0.8.2.tar.gz /srv/shiny-server/highcharter_0.8.2.tar.gz
