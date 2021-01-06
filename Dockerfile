@@ -10,12 +10,19 @@
     libcairo2-dev \
     libxt-dev \
     libssl-dev \
-    libssh2-1-dev 
+    libssh2-1-dev \
+    libicu-devel \
+    epel-release \ 
+    glpk-devel \
+    gmp-devel \
+    libxml2-devel \
+    libcurl-devel \
+    openssl-devel \
+    zlib-devel
     
 
 RUN R -e "paste('le GETWDDDDDDDDDDDDDDDDD  EGALEEE   A  : ',getwd() )"
 
-COPY highcharter_0.8.2.tar.gz /srv/shiny-server/highcharter_0.8.2.tar.gz
 
 #RUN R -e "install.packages('rgdal')"
 
@@ -34,10 +41,7 @@ RUN R -e "install.packages('rjson')"
 
 RUN R -e "install.packages(c('vctrs','rlang','backports','data.table','jsonlite','broom','htmlwidgets'))"
 
-
-#RUN R -e "install.packages('https://cran.r-project.org/bin/macosx/contrib/4.0/highcharter_0.8.2.tgz')"
-
-
+RUN R -e "install.packages('highcharter')"
 
 RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
 
