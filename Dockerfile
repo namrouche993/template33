@@ -12,6 +12,7 @@
     libssl-dev \
     libssh2-1-dev 
     
+RUN apt-get install r-cran-ggplot2
 
 RUN R -e "paste('le GETWDDDDDDDDDDDDDDDDD  EGALEEE   A  : ',getwd() )"
 
