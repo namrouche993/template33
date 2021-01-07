@@ -8,13 +8,19 @@
   libglpk-dev \
   libgmp3-dev \
   libxml2-dev \
-  libcurl4-gnutls-dev \
+  libcurl4-openssl-dev \
   libcairo2-dev \
   libxt-dev \
    libssl-dev \
   libssh2-1-dev \
   zlib1g-dev
 
+
+ update system libraries
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get clean
+    
 
 
 # libcurl4-openssl-dev \
