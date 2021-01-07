@@ -76,7 +76,10 @@ paste(.packages())
     })
  
  output$reacta<-renderReactable({
- renderReactable
+reactable::reactable(installed.packages(),searchable = TRUE, minRows = 10
+                    
+                    )
+ 
  })
  
  #output$table <- renderTable(highcharter::citytemp)
