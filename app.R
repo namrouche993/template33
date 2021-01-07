@@ -60,7 +60,7 @@ ui <- fluidPage(
 
         # Show a plot of the generated distribution
         mainPanel(
-           highchartOutput("distPlot")
+           textOutput("distPlot")
         )
     )
 )
@@ -68,9 +68,9 @@ ui <- fluidPage(
 # Define server logic required to draw a histogram
 server <- function(input, output) {
 
-    output$distPlot <- renderHighchart({
+    output$distPlot <- renderText({
      
-    hchart(mtcars,'scatter',hcaes(x=wt,y=mpg))    
+paste(.packages())
      
     })
 }
