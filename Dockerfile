@@ -4,6 +4,10 @@
  sudo \
  pandoc \
   pandoc-citeproc \
+  libicu-dev \
+  libglpk-dev \
+  libgmp3-dev \
+  libxml2-dev \
   libcurl4-openssl-dev \
   libcairo2-dev \
   libxt-dev \
