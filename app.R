@@ -46,7 +46,7 @@ library(shiny)
 ui <- fluidPage(
 
     # Application title
-    titlePanel("Old Faithful Geyser sffffffffffffsData"),
+    titlePanel("Old Faithful USMAAA Geyser sffffffffffffsData"),
 
     # Sidebar with a slider input for number of bins 
     sidebarLayout(
@@ -61,7 +61,7 @@ ui <- fluidPage(
         # Show a plot of the generated distribution
         mainPanel(
            textOutput("distPlot")
-,reactableOutput('reacta')
+#,reactableOutput('reacta')
         )
     )
 )
@@ -75,12 +75,12 @@ paste(.packages())
      
     })
  
- output$reacta<-renderReactable({
-reactable::reactable(installed.packages(),searchable = TRUE, minRows = 10
+ #output$reacta<-renderReactable({
+#reactable::reactable(installed.packages(),searchable = TRUE, minRows = 10
                     
-                    )
+ #                   )
  
- })
+# })
  
  #output$table <- renderTable(highcharter::citytemp)
 
