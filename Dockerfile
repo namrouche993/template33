@@ -1,24 +1,32 @@
-FROM rocker/r-base
+FROM rocker/shiny
 
-MAINTAINER "Petr Shevtsov" petr.shevtsov@gmail.com
+ RUN apt-get update && apt-get install -y  \
+ sudo \
+ pandoc \
+  pandoc-citeproc \
+  libicu-dev \
+  libglpk-dev \
+  libgmp3-dev \
+  libxml2-dev \
+  libcurl4-openssl-dev \
+  libcairo2-dev \
+  libxt-dev \
+   libssl-dev \
+  libssh2-1-dev \
+  zlib1g-dev
 
-ENV DEBIAN-FRONTEND noninteractive
+RUN R -e "install.packages('shiny', dependencies = TRUE)"
+RUN R -e "install.packages('remotes', dependencies = TRUE)"
+RUN R -e "remotes::install_github('jbkunst/highcharter',dependencies = TRUE)"
 
-RUN apt-get update && apt-get install -y \
-    sudo \
-    ca-certificates \
-&& wget -q http://ftp.us.debian.org/debian/pool/main/o/openssl/libssl0.9.8_0.9.8o-4squeeze14_amd64.deb \
-&& dpkg -i libssl0.9.8_0.9.8o-4squeeze14_amd64.deb && rm libssl0.9.8_0.9.8o-4squeeze14_amd64.deb \
-&& (ver=$(wget -qO- https://s3.amazonaws.com/rstudio-shiny-server-os-build/ubuntu-12.04/x86_64/VERSION) \
-&& wget https://s3.amazonaws.com/rstudio-shiny-server-os-build/ubuntu-12.04/x86_64/shiny-server-${ver}-amd64.deb -O shiny-server.deb \
-&& dpkg -i shiny-server.deb \
-&& rm shiny-server.deb)
+COPY app.R /srv/shiny-server/app.R
 
-RUN R -e "install.packages(c('shiny'), repos='http://cran.rstudio.com/')"
-
-RUN cp -R app.R /srv/shiny-server/
+COPY shiny-customized.config /etc/shiny-server/shiny-server.conf
 
 EXPOSE 8080
 
 USER shiny
+
+# avoid s6 initialization
+# see https://github.com/rocker-org/shiny/issues/79
 CMD ["/usr/bin/shiny-server"]
