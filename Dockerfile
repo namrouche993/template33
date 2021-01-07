@@ -17,6 +17,9 @@ FROM rocker/shiny:latest
 # system libraries of general use
 ## install debian packages
 RUN apt-get update -qq && apt-get -y --no-install-recommends install \
+    libicu-dev \
+    libglpk-dev \
+    libgmp3-dev \
     libxml2-dev \
     libcairo2-dev \
     libsqlite3-dev \
@@ -36,7 +39,7 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
 #apt-get install -y libxml2-dev
 #apt-get install -y libcurl4-openssl-dev
 #apt-get install -y libssl-dev
-#apt-get install -y zlib1g-dev
+######apt-get install -y zlib1g-dev
 
 
 
