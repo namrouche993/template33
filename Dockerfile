@@ -69,21 +69,21 @@ RUN apt-get update && \
 
 
 RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
- RUN R -e "install.packages('rlist', repos='http://cran.rstudio.com/')"
- RUN R -e "install.packages('zoo', repos='http://cran.rstudio.com/')"
- RUN R -e "install.packages('xts', repos='http://cran.rstudio.com/')"
- RUN R -e "install.packages('quantmod', repos='http://cran.rstudio.com/')"
- RUN R -e "install.packages('igraph', repos='http://cran.rstudio.com/')"
- RUN R -e "install.packages('devtools', repos='http://cran.rstudio.com/')"
- RUN R -e "install.packages('remotes', repos='http://cran.rstudio.com/')"
+ #RUN R -e "install.packages('rlist', repos='http://cran.rstudio.com/')"
+ #RUN R -e "install.packages('zoo', repos='http://cran.rstudio.com/')"
+ #RUN R -e "install.packages('xts', repos='http://cran.rstudio.com/')"
+ #RUN R -e "install.packages('quantmod', repos='http://cran.rstudio.com/')"
+ #RUN R -e "install.packages('igraph', repos='http://cran.rstudio.com/')"
+ #RUN R -e "install.packages('devtools', repos='http://cran.rstudio.com/')"
+ RUN R -e "install.packages('remotes', dependencies = TRUE)"
 
 
 # RUN R -e "install.packages('assertthat', repos='http://cran.rstudio.com/')"
 # RUN R -e "install.packages('broom', repos='http://cran.rstudio.com/')"
 # RUN R -e "install.packages('dplyr', repos='http://cran.rstudio.com/')"
- RUN R -e "install.packages('htmltools', repos='http://cran.rstudio.com/')"
- RUN R -e "install.packages('htmlwidgets', repos='http://cran.rstudio.com/')"
- RUN R -e "install.packages('jsonlite', repos='http://cran.rstudio.com/')"
+ #RUN R -e "install.packages('htmltools', repos='http://cran.rstudio.com/')"
+ #RUN R -e "install.packages('htmlwidgets', repos='http://cran.rstudio.com/')"
+ #RUN R -e "install.packages('jsonlite', repos='http://cran.rstudio.com/')"
 # RUN R -e "install.packages('lubridate', repos='http://cran.rstudio.com/')"
 # RUN R -e "install.packages('magrittr', repos='http://cran.rstudio.com/')"
 # RUN R -e "install.packages('purrr', repos='http://cran.rstudio.com/')"
@@ -115,7 +115,8 @@ RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
 # RUN R -e "install.packages('tidyverse', repos='http://cran.rstudio.com/')"
 #RUN R -e "install.packages('reactable', repos='http://cran.rstudio.com/')"
 
-RUN R -e "install.packages('https://github.com/jbkunst/highcharter/archive/v0.7.0.tar.gz')"
+
+RUN R -e "install.packages('highcharter', dependencies = TRUE)"
 
 #RUN R -e "remotes::install_github('jbkunst/highcharter')"
 
