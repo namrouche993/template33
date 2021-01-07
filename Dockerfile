@@ -5,6 +5,7 @@
  pandoc \
   pandoc-citeproc \
   libcurl4-gnutls-dev \
+  libcurl4-openssl-dev \
   libcairo2-dev \
   libxt-dev \
    libssl-dev \
