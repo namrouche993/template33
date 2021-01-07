@@ -34,7 +34,7 @@ library(shiny)
   #library(readxl)
 
 
- library(reactable)
+ #library(reactable)
 #library(grDevices)
 #library(janitor)
 
