@@ -25,7 +25,20 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     libssh2-1-dev \
     unixodbc-dev \
     libcurl4-openssl-dev \
-    libssl-dev
+    libssl-dev \
+    zlib1g-dev
+
+
+
+#apt-get install -y libicu-dev
+#apt-get install -y libglpk-dev
+#apt-get install -y libgmp3-dev
+#apt-get install -y libxml2-dev
+#apt-get install -y libcurl4-openssl-dev
+#apt-get install -y libssl-dev
+#apt-get install -y zlib1g-dev
+
+
 
 ## update system libraries
 RUN apt-get update && \
@@ -33,6 +46,8 @@ RUN apt-get update && \
     apt-get clean
     
     
+
+
 
 
 
