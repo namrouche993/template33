@@ -5,12 +5,17 @@
  pandoc \
   pandoc-citeproc \
   libcurl4-openssl-dev \
-  libcurl4-gnutls-dev \
   libcairo2-dev \
   libxt-dev \
    libssl-dev \
   libssh2-1-dev \
   zlib1g-dev
+
+
+
+
+#  libcurl4-gnutls-dev \
+
 
 
 # Base image https://hub.docker.com/u/rocker/
