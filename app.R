@@ -5,7 +5,7 @@
 #.Library=paste0(getwd(),"/R-Portable-Win/library")
 
 library(shiny)
-library(highcharter)
+#library(highcharter)
 
 
 # Define UI for application that draws a histogram
