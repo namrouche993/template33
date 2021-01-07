@@ -31,6 +31,7 @@ ui <- fluidPage(
     )
 )
 
+server <- function(input, output, session) {
 # Define server logic required to draw a histogram
   output$distPlot <- renderPlot({
     
