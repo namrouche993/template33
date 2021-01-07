@@ -8,7 +8,7 @@
   libglpk-dev \
   libgmp3-dev \
   libxml2-dev \
-  libcurl4-openssl-dev \
+  libcurl4-gnutls-dev \
   libcairo2-dev \
   libxt-dev \
    libssl-dev \
@@ -17,7 +17,7 @@
 
 
 
-
+# libcurl4-openssl-dev \
 #  libcurl4-gnutls-dev \
 
 
