@@ -61,8 +61,8 @@ ui <- fluidPage(
         # Show a plot of the generated distribution
         mainPanel(
            textOutput("distPlot")
-,reactableOutput('reacta'),
-        highcharter::highchartOutput("hc1")
+,reactableOutput('reacta')
+#,        highcharter::highchartOutput("hc1")
 
         )
     )
@@ -82,9 +82,9 @@ reactable::reactable(installed.packages(),searchable = TRUE, minRows = 10)
  
  })
  
-     output$hc1<-highcharter::renderHighchart({
-        highcharter::hchart(mtcars,'column',highcharter::hcaes(mpg,cyl))      
-     })
+ #    output$hc1<-highcharter::renderHighchart({
+  #      highcharter::hchart(mtcars,'column',highcharter::hcaes(mpg,cyl))      
+  #   })
  
  
  
