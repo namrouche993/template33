@@ -124,7 +124,7 @@ RUN R -e "install.packages('shiny', dependencies = TRUE)"
 
 
 # RUN R -e "install.packages('tidyverse', repos='http://cran.rstudio.com/')"
-#RUN R -e "install.packages('reactable', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('reactable', repos='http://cran.rstudio.com/')"
 
 
 #RUN R -e "install.packages('highcharter', dependencies = TRUE)"
