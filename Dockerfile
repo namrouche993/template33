@@ -1,14 +1,41 @@
-  FROM rocker/shiny-verse:latest
+  #FROM rocker/shiny-verse:latest
 
- RUN apt-get update && apt-get install -y  \
-     sudo \
-    pandoc \
-     pandoc-citeproc \
-     libcurl4-gnutls-dev \
-     libcairo2-dev \
-     libxt-dev \
-     libssl-dev \
-     libssh2-1-dev
+ #RUN apt-get update && apt-get install -y  \
+     #sudo \
+    #pandoc \
+    # pandoc-citeproc \
+    # libcurl4-gnutls-dev \
+    # libcairo2-dev \
+    # libxt-dev \
+   #  libssl-dev \
+    # libssh2-1-dev
+
+
+# Base image https://hub.docker.com/u/rocker/
+FROM rocker/shiny:latest 
+
+# system libraries of general use
+## install debian packages
+RUN apt-get update -qq && apt-get -y --no-install-recommends install \
+    libxml2-dev \
+    libcairo2-dev \
+    libsqlite3-dev \
+    libmariadbd-dev \
+    libpq-dev \
+    libssh2-1-dev \
+    unixodbc-dev \
+    libcurl4-openssl-dev \
+    libssl-dev
+
+## update system libraries
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get clean
+    
+    
+
+
+
 
 # sudo \
 #   gdebi-core \
@@ -38,7 +65,7 @@ RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
 # RUN R -e "install.packages('dplyr', repos='http://cran.rstudio.com/')"
  RUN R -e "install.packages('htmltools', repos='http://cran.rstudio.com/')"
  RUN R -e "install.packages('htmlwidgets', repos='http://cran.rstudio.com/')"
- #RUN R -e "install.packages('jsonlite', repos='http://cran.rstudio.com/')"
+ RUN R -e "install.packages('jsonlite', repos='http://cran.rstudio.com/')"
 # RUN R -e "install.packages('lubridate', repos='http://cran.rstudio.com/')"
 # RUN R -e "install.packages('magrittr', repos='http://cran.rstudio.com/')"
 # RUN R -e "install.packages('purrr', repos='http://cran.rstudio.com/')"
@@ -56,19 +83,19 @@ RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
 # RUN R -e "install.packages('ggplot2', repos='http://cran.rstudio.com/')"
 # RUN R -e "install.packages('viridisLite', repos='http://cran.rstudio.com/')"
 # RUN R -e "install.packages('gapminder', repos='http://cran.rstudio.com/')"
-# RUN R -e "install.packages('forecast', repos='http://cran.rstudio.com/')"
-# RUN R -e "install.packages('protolite', repos='http://cran.rstudio.com/')"
-# RUN R -e "install.packages('jqr', repos='http://cran.rstudio.com/')"
+ RUN R -e "install.packages('forecast', repos='http://cran.rstudio.com/')"
+ RUN R -e "install.packages('protolite', repos='http://cran.rstudio.com/')"
+ RUN R -e "install.packages('jqr', repos='http://cran.rstudio.com/')"
 
 
-# RUN R -e "install.packages('geojsonio', repos='http://cran.rstudio.com/')"
+ RUN R -e "install.packages('geojsonio', repos='http://cran.rstudio.com/')"
 # RUN R -e "install.packages('testthat', repos='http://cran.rstudio.com/')"
 # RUN R -e "install.packages('covr', repos='http://cran.rstudio.com/')"
 # RUN R -e "install.packages('spelling', repos='http://cran.rstudio.com/')"
 
 
 # RUN R -e "install.packages('tidyverse', repos='http://cran.rstudio.com/')"
-#RUN R -e "install.packages('reactable', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('reactable', repos='http://cran.rstudio.com/')"
 
 RUN R -e "install.packages('https://github.com/jbkunst/highcharter/archive/v0.7.0.tar.gz')"
 
