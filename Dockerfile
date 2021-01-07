@@ -83,19 +83,19 @@ RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
 # RUN R -e "install.packages('ggplot2', repos='http://cran.rstudio.com/')"
 # RUN R -e "install.packages('viridisLite', repos='http://cran.rstudio.com/')"
 # RUN R -e "install.packages('gapminder', repos='http://cran.rstudio.com/')"
- RUN R -e "install.packages('forecast', repos='http://cran.rstudio.com/')"
- RUN R -e "install.packages('protolite', repos='http://cran.rstudio.com/')"
- RUN R -e "install.packages('jqr', repos='http://cran.rstudio.com/')"
+ #RUN R -e "install.packages('forecast', repos='http://cran.rstudio.com/')"
+ #RUN R -e "install.packages('protolite', repos='http://cran.rstudio.com/')"
+ #RUN R -e "install.packages('jqr', repos='http://cran.rstudio.com/')"
 
 
- RUN R -e "install.packages('geojsonio', repos='http://cran.rstudio.com/')"
+ #RUN R -e "install.packages('geojsonio', repos='http://cran.rstudio.com/')"
 # RUN R -e "install.packages('testthat', repos='http://cran.rstudio.com/')"
 # RUN R -e "install.packages('covr', repos='http://cran.rstudio.com/')"
 # RUN R -e "install.packages('spelling', repos='http://cran.rstudio.com/')"
 
 
 # RUN R -e "install.packages('tidyverse', repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('reactable', repos='http://cran.rstudio.com/')"
+#RUN R -e "install.packages('reactable', repos='http://cran.rstudio.com/')"
 
 RUN R -e "install.packages('https://github.com/jbkunst/highcharter/archive/v0.7.0.tar.gz')"
 
