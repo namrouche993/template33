@@ -1,6 +1,6 @@
   FROM rocker/shiny-verse:latest
 
- RUN apt-get update && apt-get upgrade -y && apt-get install -y  \
+ RUN apt-get update && apt-get install -y  \
      sudo \
     pandoc \
      pandoc-citeproc \
@@ -67,7 +67,7 @@ RUN R -e "install.packages('tidyverse', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('reactable', repos='http://cran.rstudio.com/')"
 
 
-RUN R -e "install.packages('https://cran.r-project.org/src/contrib/highcharter_0.8.2.tar.gz')"
+RUN R -e "remotes::install_github('jbkunst/highcharter')"
 
 #RUN R -e "install.packages('https://packagemanager.rstudio.com/all/latest/src/contrib/Archive/highcharter/highcharter_0.7.0.tar.gz')"
 
