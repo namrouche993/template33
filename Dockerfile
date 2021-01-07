@@ -1,35 +1,35 @@
-  #FROM rocker/shiny-verse:latest
+  FROM rocker/shiny-verse:latest
 
- #RUN apt-get update && apt-get install -y  \
-     #sudo \
-    #pandoc \
-    # pandoc-citeproc \
-    # libcurl4-gnutls-dev \
-    # libcairo2-dev \
-    # libxt-dev \
-   #  libssl-dev \
-    # libssh2-1-dev
+ RUN apt-get update && apt-get install -y  \
+ sudo \
+ pandoc \
+  pandoc-citeproc \
+  libcurl4-gnutls-dev \
+  libcairo2-dev \
+  libxt-dev \
+   libssl-dev \
+  libssh2-1-dev
 
 
 # Base image https://hub.docker.com/u/rocker/
-FROM rocker/shiny:latest 
+#FROM rocker/shiny:latest 
 
 # system libraries of general use
 ## install debian packages
-RUN apt-get update -qq && apt-get -y --no-install-recommends install \
-    libicu-dev \
-    libglpk-dev \
-    libgmp3-dev \
-    libxml2-dev \
-    libcairo2-dev \
-    libsqlite3-dev \
-    libmariadbd-dev \
-    libpq-dev \
-    libssh2-1-dev \
-    unixodbc-dev \
-    libcurl4-openssl-dev \
-    libssl-dev \
-    zlib1g-dev
+# RUN apt-get update -qq && apt-get -y --no-install-recommends install \
+#    libicu-dev \
+#    libglpk-dev \
+#    libgmp3-dev \
+#    libxml2-dev \
+#    libcairo2-dev \
+#    libsqlite3-dev \
+#    libmariadbd-dev \
+#    libpq-dev \
+#    libssh2-1-dev \
+#    unixodbc-dev \
+#    libcurl4-openssl-dev \
+#    libssl-dev \
+#    zlib1g-dev
 
 
 
@@ -44,9 +44,9 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
 
 
 ## update system libraries
-RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt-get clean
+#RUN apt-get update && \
+#    apt-get upgrade -y && \
+#    apt-get clean
     
     
 
@@ -75,7 +75,7 @@ RUN R -e "install.packages('shiny', dependencies = TRUE)"
  #RUN R -e "install.packages('quantmod', repos='http://cran.rstudio.com/')"
  #RUN R -e "install.packages('igraph', repos='http://cran.rstudio.com/')"
  #RUN R -e "install.packages('devtools', repos='http://cran.rstudio.com/')"
- RUN R -e "install.packages('remotes', dependencies = TRUE)"
+ #RUN R -e "install.packages('remotes', dependencies = TRUE)"
 
 
 # RUN R -e "install.packages('assertthat', repos='http://cran.rstudio.com/')"
