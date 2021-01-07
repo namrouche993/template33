@@ -60,7 +60,8 @@ ui <- fluidPage(
 
         # Show a plot of the generated distribution
         mainPanel(
-           textOutput("distPlot")
+           textOutput("distPlot"),
+         tableOutput("table1")
         )
     )
 )
@@ -73,6 +74,11 @@ server <- function(input, output) {
 paste(.packages())
      
     })
+ 
+ output$table1<-renderTable({
+ data.frame(highcharter::citytemp)
+ })
+ 
 }
 
 # Run the application 
