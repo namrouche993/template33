@@ -34,7 +34,9 @@ RUN install2.r --error \
     ## clean up
     && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 ## assume shiny app is in build folder /shiny
-COPY ./Shiny/ /srv/shiny-server/shiny/
+COPY app.R /srv/shiny-server/shiny/app.R
+
+#COPY ./Shiny/ /srv/shiny-server/shiny/
 # select port
 EXPOSE 8080
 # run app
