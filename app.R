@@ -25,9 +25,9 @@ library(shiny)
 # library(rgdal)
  #library(sp)
  #install.packages('highcharter')
-library(httpuv)
- require(highcharter)
- library(tidyverse)
+#library(httpuv)
+ #require(highcharter)
+ #library(tidyverse)
  #library(excelR)
 
 
@@ -35,7 +35,7 @@ library(httpuv)
   #library(readxl)
 
 
- library(reactable)
+ #library(reactable)
 #library(grDevices)
 #library(janitor)
 
@@ -62,7 +62,7 @@ ui <- fluidPage(
         # Show a plot of the generated distribution
         mainPanel(
            textOutput("distPlot")
-,reactableOutput('reacta')
+#,reactableOutput('reacta')
 #,        highcharter::highchartOutput("hc1")
 
         )
@@ -78,10 +78,10 @@ paste(.packages())
      
     })
  
- output$reacta<-renderReactable({
-reactable::reactable(installed.packages(),searchable = TRUE, minRows = 10)
+ #output$reacta<-renderReactable({
+#reactable::reactable(installed.packages(),searchable = TRUE, minRows = 10)
  
- })
+ #})
  
  #    output$hc1<-highcharter::renderHighchart({
   #      highcharter::hchart(mtcars,'column',highcharter::hcaes(mpg,cyl))      
