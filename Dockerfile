@@ -1,46 +1,38 @@
-FROM rocker/shiny-verse:latest
-# install R package dependencies
-RUN apt-get update && apt-get -qq -y install curl \
-    libssl-dev \
-    libcurl4-openssl-dev \
-    ## clean up
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/ \
-    && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
-   
+
+
+FROM rocker/r-ver:3.6.3
+
 RUN apt-get update && apt-get install -y \
     sudo \
+    gdebi-core \
     pandoc \
     pandoc-citeproc \
     libcurl4-gnutls-dev \
     libcairo2-dev \
     libxt-dev \
-    libssh2-1-dev
-RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
-#RUN R -e "install.packages('shinydashboard', repos='http://cran.rstudio.com/')"
-RUN R -e "devtools::install_github('andrewsali/shinycssloaders')"
-RUN R -e "devtools::install_github('rstudio/httpuv')"
-RUN R -e "install.packages('lubridate', repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('magrittr', repos='http://cran.rstudio.com/')"
-#RUN R -e "install.packages('glue', repos='http://cran.rstudio.com/')"
-#RUN R -e "install.packages('DT', repos='http://cran.rstudio.com/')"
-#RUN R -e "install.packages('plotly', repos='http://cran.rstudio.com/')"
-   
-## Install packages from CRAN
-RUN install2.r --error \
-    -r 'http://cran.rstudio.com' \
-    googleAuthR \
-    ## install Github packages
-    ## clean up
-    && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
-## assume shiny app is in build folder /shiny
-COPY app.R /srv/shiny-server/shiny/app.R
+    xtail \
+    wget
 
-#COPY ./Shiny/ /srv/shiny-server/shiny/
-# select port
-EXPOSE 8080
 
+# Download and install shiny server
+RUN wget --no-verbose https://download3.rstudio.org/ubuntu-14.04/x86_64/VERSION -O "version.txt" && \
+    VERSION=$(cat version.txt)  && \
+    wget --no-verbose "https://download3.rstudio.org/ubuntu-14.04/x86_64/shiny-server-$VERSION-amd64.deb" -O ss-latest.deb && \
+    gdebi -n ss-latest.deb && \
+    rm -f version.txt ss-latest.deb && \
+    . /etc/environment && \
+    R -e "install.packages(c('shiny', 'rmarkdown'), repos='$MRAN')" && \
+    cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/ && \
+    chown shiny:shiny /var/lib/shiny-server
+
+
+COPY shiny-customized.config /etc/shiny-server/shiny-server.conf
 COPY shiny-server.sh /usr/bin/shiny-server.sh
 
-# run app
-CMD ["/usr/bin/shiny-server.sh"]
+EXPOSE 8080
+
+USER shiny
+
+# avoid s6 initialization
+# see https://github.com/rocker-org/shiny/issues/79
+CMD ["/usr/bin/shiny-server"]
