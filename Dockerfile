@@ -16,7 +16,7 @@
   zlib1g-dev
 
 
- update system libraries
+## update system libraries
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get clean
@@ -137,7 +137,8 @@ RUN R -e "install.packages('reactable', repos='http://cran.rstudio.com/')"
 
 RUN R -e "remotes::install_github('jbkunst/highcharter',dependencies = TRUE)"
 RUN R -e "library(highcharter)"
-#RUN R -e "data.frame(highcharter::citytemp)"
+RUN R -e "ab='USMISTEO"
+RUN R -e "paste(ab)"
 
 #RUN R -e "install.packages('https://packagemanager.rstudio.com/all/latest/src/contrib/Archive/highcharter/highcharter_0.7.0.tar.gz')"
 
