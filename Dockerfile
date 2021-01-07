@@ -1,32 +1,10 @@
-  FROM rocker/shiny-verse:latest
-  
- RUN apt-get update && apt-get install -y  \
- sudo \
- pandoc \
-  pandoc-citeproc \
-  libicu-dev \
-  libglpk-dev \
-  libgmp3-dev \
-  libxml2-dev \
-  libcurl4-openssl-dev \
-  libcairo2-dev \
-  libxt-dev \
-   libssl-dev \
-  libssh2-1-dev \
-  zlib1g-dev
+FROM saagie/shiny4saagie
 
-RUN R -e "install.packages('shiny', dependencies = TRUE)"
-RUN R -e "install.packages('remotes', dependencies = TRUE)"
-RUN R -e "remotes::install_github('jbkunst/highcharter',dependencies = TRUE)"
+# Install R packages required by your Shiny app
+RUN R -e 'install.packages(c("DT", "magrittr"), repos="http://cran.rstudio.com")'
 
-COPY app.R /srv/shiny-server/app.R
+# Copy your Shiny app to /srv/shiny-server/myapp
+COPY app.R /srv/shiny-server/myapp
 
-COPY shiny-customized.config /etc/shiny-server/shiny-server.conf
-
-EXPOSE 8080
-
-USER shiny
-
-# avoid s6 initialization
-# see https://github.com/rocker-org/shiny/issues/79
-CMD ["/usr/bin/shiny-server"]
+# Launch Shiny Server
+CMD ["/usr/bin/shiny-server.sh"]
