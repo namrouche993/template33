@@ -75,7 +75,7 @@ RUN R -e "install.packages('shiny', dependencies = TRUE)"
  #RUN R -e "install.packages('quantmod', repos='http://cran.rstudio.com/')"
  #RUN R -e "install.packages('igraph', repos='http://cran.rstudio.com/')"
  #RUN R -e "install.packages('devtools', repos='http://cran.rstudio.com/')"
- #RUN R -e "install.packages('remotes', dependencies = TRUE)"
+ RUN R -e "install.packages('remotes', dependencies = TRUE)"
 
 
 # RUN R -e "install.packages('assertthat', repos='http://cran.rstudio.com/')"
@@ -118,7 +118,7 @@ RUN R -e "install.packages('shiny', dependencies = TRUE)"
 
 #RUN R -e "install.packages('highcharter', dependencies = TRUE)"
 
-#RUN R -e "remotes::install_github('jbkunst/highcharter',dependencies = TRUE)"
+RUN R -e "remotes::install_github('jbkunst/highcharter',dependencies = TRUE)"
 #RUN R -e "library(highcharter)"
 #RUN R -e "data.frame(highcharter::citytemp)"
 
