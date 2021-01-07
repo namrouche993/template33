@@ -68,7 +68,7 @@ RUN apt-get update && \
 #    libgdal-dev
 
 
-RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('shiny', dependencies = TRUE)"
  #RUN R -e "install.packages('rlist', repos='http://cran.rstudio.com/')"
  #RUN R -e "install.packages('zoo', repos='http://cran.rstudio.com/')"
  #RUN R -e "install.packages('xts', repos='http://cran.rstudio.com/')"
@@ -118,9 +118,9 @@ RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
 
 #RUN R -e "install.packages('highcharter', dependencies = TRUE)"
 
-RUN R -e "remotes::install_github('jbkunst/highcharter',dependencies = TRUE)"
-RUN R -e "library(highcharter)"
-RUN R -e "data.frame(highcharter::citytemp)"
+#RUN R -e "remotes::install_github('jbkunst/highcharter',dependencies = TRUE)"
+#RUN R -e "library(highcharter)"
+#RUN R -e "data.frame(highcharter::citytemp)"
 
 #RUN R -e "install.packages('https://packagemanager.rstudio.com/all/latest/src/contrib/Archive/highcharter/highcharter_0.7.0.tar.gz')"
 
