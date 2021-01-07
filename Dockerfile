@@ -57,6 +57,10 @@ RUN R -e "install.packages('ggplot2', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('viridisLite', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('gapminder', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('forecast', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('protolite', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('jqr', repos='http://cran.rstudio.com/')"
+
+
 RUN R -e "install.packages('geojsonio', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('testthat', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('covr', repos='http://cran.rstudio.com/')"
