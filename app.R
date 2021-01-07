@@ -5,41 +5,6 @@
 #.Library=paste0(getwd(),"/R-Portable-Win/library")
 
 library(shiny)
-#library(fresh)
-#library(shinydashboard)
-#library(shinydashboardPlus)
-#library(shinythemes)
-#library(shinyWidgets)
-#library(shinycssloaders)
-#library(ECharts2Shiny)
-#library(rAmCharts)
-#library(shinyBS)
-
- #library(leaflet)
-#library(remotes)
-
-#library(htmltools)
-
- # library(leaflet.extras)
-
-# library(rgdal)
- #library(sp)
- #install.packages('highcharter')
-#library(httpuv)
- #require(highcharter)
- #library(tidyverse)
- #library(excelR)
-
-
-  #library(farver)
-  #library(readxl)
-
-
- #library(reactable)
-#library(grDevices)
-#library(janitor)
-
- #library(shinyjs)
 
 
 
@@ -62,9 +27,6 @@ ui <- fluidPage(
         # Show a plot of the generated distribution
         mainPanel(
            textOutput("distPlot")
-#,reactableOutput('reacta')
-#,        highcharter::highchartOutput("hc1")
-
         )
     )
 )
@@ -78,21 +40,13 @@ paste(.packages())
      
     })
  
- #output$reacta<-renderReactable({
-#reactable::reactable(installed.packages(),searchable = TRUE, minRows = 10)
- 
- #})
- 
- #    output$hc1<-highcharter::renderHighchart({
-  #      highcharter::hchart(mtcars,'column',highcharter::hcaes(mpg,cyl))      
-  #   })
- 
- 
- 
- #output$table <- renderTable(highcharter::citytemp)
-
- 
 }
 
-# Run the application 
+# If you want to automatically reload the app when your codebase changes - should be turned off in production
+options(shiny.autoreload = TRUE)
+
+options(shiny.host = '0.0.0.0')
+options(shiny.port = 8080)
+
+# Create Shiny app ---- 
 shinyApp(ui = ui, server = server)
