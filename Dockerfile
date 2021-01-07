@@ -39,5 +39,8 @@ COPY app.R /srv/shiny-server/shiny/app.R
 #COPY ./Shiny/ /srv/shiny-server/shiny/
 # select port
 EXPOSE 8080
+
+COPY shiny-server.sh /usr/bin/shiny-server.sh
+
 # run app
 CMD ["/usr/bin/shiny-server.sh"]
