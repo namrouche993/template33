@@ -94,9 +94,11 @@ RUN apt-get update && \
  #RUN R -e "install.packages('devtools', repos='http://cran.rstudio.com/')"
  RUN R -e "install.packages('remotes', dependencies = TRUE)"
 
-RUN R -e "remotes::install_github('httpuv',dependencies = TRUE)"
+
+
+RUN R -e "remotes::install_github('rstudio/httpuv',dependencies = TRUE)"
 RUN R -e "install.packages('shiny', dependencies = TRUE)"
-RUN R -e "remotes::install_github('httpuv',dependencies = TRUE)"
+RUN R -e "remotes::install_github('rstudio/httpuv',dependencies = TRUE)"
 
 
 # RUN R -e "install.packages('assertthat', repos='http://cran.rstudio.com/')"
@@ -140,14 +142,14 @@ RUN R -e "install.packages('reactable', repos='http://cran.rstudio.com/')"
 #RUN R -e "install.packages('highcharter', dependencies = TRUE)"
 
 
-RUN R -e "remotes::install_github('httpuv',dependencies = TRUE)"
+RUN R -e "remotes::install_github('rstudio/httpuv',dependencies = TRUE)"
 
 RUN R -e "remotes::install_github('jbkunst/highcharter',dependencies = TRUE)"
 RUN R -e "library(highcharter)"
 RUN R -e "ab='USMISTEO'"
 #RUN R -e "paste(ab)"
 
-RUN R -e "remotes::install_github('httpuv',dependencies = TRUE)"
+RUN R -e "remotes::install_github('rstudio/httpuv',dependencies = TRUE)"
 
 #RUN R -e "install.packages('https://packagemanager.rstudio.com/all/latest/src/contrib/Archive/highcharter/highcharter_0.7.0.tar.gz')"
 
