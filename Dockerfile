@@ -119,6 +119,7 @@ RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
 #RUN R -e "install.packages('highcharter', dependencies = TRUE)"
 
 RUN R -e "remotes::install_github('jbkunst/highcharter',dependencies = TRUE)"
+RUN R -e "library(highcharter)"
 
 #RUN R -e "install.packages('https://packagemanager.rstudio.com/all/latest/src/contrib/Archive/highcharter/highcharter_0.7.0.tar.gz')"
 
