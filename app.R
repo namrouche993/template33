@@ -60,8 +60,8 @@ ui <- fluidPage(
 
         # Show a plot of the generated distribution
         mainPanel(
-           textOutput("distPlot"),
-tableOutput('table')
+           textOutput("distPlot")
+#,tableOutput('table')
         )
     )
 )
@@ -75,7 +75,7 @@ paste(.packages())
      
     })
  
- output$table <- renderTable(highcharter::citytemp)
+ #output$table <- renderTable(highcharter::citytemp)
 
  
 }
