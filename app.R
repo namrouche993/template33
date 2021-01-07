@@ -34,7 +34,7 @@ library(shiny)
   #library(readxl)
 
 
- #library(reactable)
+ library(reactable)
 #library(grDevices)
 #library(janitor)
 
@@ -61,7 +61,7 @@ ui <- fluidPage(
         # Show a plot of the generated distribution
         mainPanel(
            textOutput("distPlot")
-#,tableOutput('table')
+,reactableOutput('reacta')
         )
     )
 )
@@ -74,6 +74,10 @@ server <- function(input, output) {
 paste(.packages())
      
     })
+ 
+ output$reacta<-renderReactable({
+ renderReactable
+ })
  
  #output$table <- renderTable(highcharter::citytemp)
 
