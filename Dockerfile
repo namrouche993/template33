@@ -8,7 +8,8 @@
   libcairo2-dev \
   libxt-dev \
    libssl-dev \
-  libssh2-1-dev
+  libssh2-1-dev \
+  zlib1g-dev
 
 
 # Base image https://hub.docker.com/u/rocker/
