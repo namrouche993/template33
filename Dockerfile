@@ -50,11 +50,26 @@ RUN R -e "install.packages('tidyr', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('yaml', repos='http://cran.rstudio.com/')"
 
 
+RUN R -e "install.packages('knitr', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('rmarkdown', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('survival', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('ggplot2', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('viridisLite', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('gapminder', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('forecast', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('geojsonio', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('testthat', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('covr', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('spelling', repos='http://cran.rstudio.com/')"
+
+
 RUN R -e "install.packages('tidyverse', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('reactable', repos='http://cran.rstudio.com/')"
 
 
-RUN R -e "install.packages('https://packagemanager.rstudio.com/all/latest/src/contrib/Archive/highcharter/highcharter_0.7.0.tar.gz')"
+RUN R -e "install.packages('https://cran.r-project.org/src/contrib/highcharter_0.8.2.tar.gz')"
+
+#RUN R -e "install.packages('https://packagemanager.rstudio.com/all/latest/src/contrib/Archive/highcharter/highcharter_0.7.0.tar.gz')"
 
 
 COPY app.R /srv/shiny-server/app.R
