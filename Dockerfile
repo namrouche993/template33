@@ -19,7 +19,7 @@ FROM rocker/shiny-verse:latest
   gdal-bin
   
 
-RUN R -e "install.packages("httr",dependencies = TRUE)"
+RUN R -e "install.packages('httr',dependencies = TRUE)"
 
 COPY app.R /srv/shiny-server/app.R
 
