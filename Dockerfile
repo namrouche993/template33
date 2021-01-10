@@ -13,18 +13,19 @@ FROM rocker/shiny-verse:latest
   libxt-dev \
   libssl-dev \
   libssh2-1-dev \
-  zlib1g-dev
+  zlib1g-dev \
+  libgdal-dev \
+  libproj-dev \
+  gdal-bin
+  
 
-
-RUN R -e "install.packages('shiny', dependencies = TRUE)"
-RUN R -e "install.packages('remotes', dependencies = TRUE)"
-RUN R -e "remotes::install_github('jbkunst/highcharter',dependencies = TRUE)"
+RUN R -e "install.packages("httr",dependencies = TRUE)"
 
 COPY app.R /srv/shiny-server/app.R
 
 COPY shiny-customized.config /etc/shiny-server/shiny-server.conf
 
-EXPOSE 8080
+EXPOSE 8282
 
 USER shiny
 
