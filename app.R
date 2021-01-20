@@ -15,20 +15,8 @@ authUI <- function() {
     top: 30%;
     left: 95%;
 }
-
-#home {
-    font-size: 24px;
-    text-align: left;
-    position: absolute;
-    top: 80%;
-    left: 45%;
-}
-
-    ")),
-      
-      
-      tags$title("Login")
-    ),
+    "))
+          ),
     div(
       id = "login",
       wellPanel(
@@ -45,9 +33,27 @@ authUI <- function() {
         h3(textOutput("body")))
   )
 }
-mainUI <- function() {
+
+mainUI <- fluidPage( 
+fluidPage(
+    div(
+      id = "login",
+      wellPanel(
+        textInput("email", "Email"),
+        passwordInput("password", "Password"),
+        tags$br(),
+        actionButton("loginButton", "Log in"),
+        actionButton("signupButton", "Sign up")
+      )
+    ),
+    div(id = "authStatus",
+        h3(textOutput("status")),
+        br(),
+        h3(textOutput("body")))
+  )
+
+  
   fluidPage(
-    
     # Application title
     titlePanel("Old Faithful Geyser Data"),
     
@@ -68,24 +74,25 @@ mainUI <- function() {
     )
   )
   
-  }
+  )
 
-ui <- (htmlOutput("screen"))
+#ui <- (htmlOutput("screen"))
 
 
 server <- function(input, output) {
   isAuth <- reactiveVal(value = FALSE)
-  observe({
-    if (isAuth() == FALSE) {
-      output$screen <- renderUI({
-        div(do.call(bootstrapPage, c("", authUI())))
-      })
-    } else if (isAuth() == TRUE) {
-      output$screen <- renderUI({
-        div(do.call(bootstrapPage, c("", mainUI())))
-      })
-    }
-  })
+ 
+  # observe({
+ #   if (isAuth() == FALSE) {
+ #     output$screen <- renderUI({
+ #       div(do.call(bootstrapPage, c("", authUI())))
+ #     })
+ #   } else if (isAuth() == TRUE) {
+ #     output$screen <- renderUI({
+ #       div(do.call(bootstrapPage, c("", mainUI())))
+ #     })
+ #   }
+ # })
   
   
   
@@ -176,4 +183,4 @@ server <- function(input, output) {
 }
 
 # Run the application
-shinyApp(ui = ui, server = server)
+shinyApp(ui = mainUI, server = server)
