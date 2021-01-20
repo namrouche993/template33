@@ -95,7 +95,7 @@ server <- function(input, output) {
     authPassword <- input$password
     response <-
       POST(
-        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDtok0yvXxKvpoJfdtypvf10qy5wjuFp3I",
+        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyC66rZ0wR0enwFsThvIA6BtQOdR2mVOD48",
         body = list(
           email = toString(authEmail),
           password = toString(authPassword),
@@ -125,7 +125,7 @@ server <- function(input, output) {
     authPassword <- input$password
     response <-
       POST(
-        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDtok0yvXxKvpoJfdtypvf10qy5wjuFp3I",
+        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyC66rZ0wR0enwFsThvIA6BtQOdR2mVOD48",
         body = list(
           email = toString(authEmail),
           password = toString(authPassword),
