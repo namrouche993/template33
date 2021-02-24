@@ -4,6 +4,7 @@ FROM rocker/shiny-verse:latest
  sudo \
  pandoc \
   pandoc-citeproc \
+  python \
   libicu-dev \
   libudunits2-dev \
   libglpk-dev \
@@ -30,25 +31,27 @@ RUN apt-add-repository -y ppa:ubuntugis/ubuntugis-unstable
 
 
 RUN R -e "paste(installed.packages()[,1])"
-RUN R -e "install.packages('fresh')"
-RUN R -e "install.packages('leaflet')"
-RUN R -e "install.packages('leaflet.extras')"
+RUN R -e "install.packages('reticulate')"
+
+#RUN R -e "install.packages('fresh')"
+#RUN R -e "install.packages('leaflet')"
+#RUN R -e "install.packages('leaflet.extras')"
 
 
 
 
 #RUN R -e "remotes::install_github('cran/rgdal', dependencies = TRUE)   "
-RUN R -e "install.packages('rgdal')      "
-RUN R -e "install.packages('sp')      "
-RUN R -e "remotes::install_github('Swechhya/excelR')   "
-RUN R -e " install.packages('rmapshaper')   "
+#RUN R -e "install.packages('rgdal')      "
+#RUN R -e "install.packages('sp')      "
+#RUN R -e "remotes::install_github('Swechhya/excelR')   "
+#RUN R -e " install.packages('rmapshaper')   "
 
 
 #RUN R -e " install.packages('shinymanager')   "
 
 RUN R -e "paste(installed.packages()[,1])"
 
-COPY polbnda_dza.json /srv/shiny-server/polbnda_dza.json
+#COPY polbnda_dza.json /srv/shiny-server/polbnda_dza.json
 
 
 COPY app.R /srv/shiny-server/app.R
