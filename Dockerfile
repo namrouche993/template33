@@ -1,6 +1,6 @@
 FROM rocker/shiny-verse:latest
 
-RUN apt-get update -qq && apt-get -y --no-install-recommends install \
+RUN apt-get update && apt-get install -y  \
     make \
     libsodium-dev \
     libicu-dev \
