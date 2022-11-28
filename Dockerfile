@@ -18,7 +18,7 @@ RUN R -e "paste(installed.packages()[,1])"
 #RUN R -e "install.packages('googledrive')"
 
 
-#RUN R -e "install.packages('reticulate')"
+##RUN R -e "install.packages('reticulate')"
 
 #RUN R -e "install.packages('fresh')"
 #RUN R -e "install.packages('leaflet')"
