@@ -1,16 +1,14 @@
 FROM rocker/shiny-verse:latest
 
- RUN apt-get update && apt-get install -y  \
- sudo \
- pandoc \
+RUN apt-get update && apt-get install -y \
+  sudo \
+  pandoc \
   pandoc-citeproc \
-  libicu-dev \
-  libudunits2-dev \
-  libglpk-dev \
-  libgmp3-dev \
-  libxml2-dev \
-  libproj-dev
-    
+  libcurl4-gnutls-dev \
+  libcairo2-dev \
+  libxt-dev \
+  libssl-dev \
+  libssh2-1-dev
 
 
 RUN R -e "paste(installed.packages()[,1])"
