@@ -1,37 +1,24 @@
 FROM rocker/shiny-verse:latest
 
- RUN apt-get update && apt-get install -y  \
- sudo \
- pandoc \
-  pandoc-citeproc \
-  python \
-  libicu-dev \
-  libudunits2-dev \
-  libglpk-dev \
-  libgmp3-dev \
-  libxml2-dev \
-  libcurl4-openssl-dev \
-  libcairo2-dev \
-  libxt-dev \
-  libssl-dev \
-  libprotobuf-dev \
-  protobuf-compiler \
-  software-properties-common \
-  libgeos-dev \
-  libudunits2-dev \
-  libv8-dev \
-  libssh2-1-dev \
-  libpng-dev \
-  zlib1g-dev \
-  libgdal-dev \
-  libproj-dev \
-  gdal-bin
+RUN apt-get update -qq && apt-get -y --no-install-recommends install \
+    make \
+    libsodium-dev \
+    libicu-dev \
+    libcurl4-openssl-dev \
+    libssl-dev \
+    
 
 RUN apt-add-repository -y ppa:ubuntugis/ubuntugis-unstable
 
 
 RUN R -e "paste(installed.packages()[,1])"
-RUN R -e "install.packages('reticulate')"
+RUN R -e "install.packages('shinyWidgets')"
+RUN R -e "install.packages('shinyalert')"
+RUN R -e "install.packages('shinycookie')"
+RUN R -e "install.packages('googledrive')"
+
+
+#RUN R -e "install.packages('reticulate')"
 
 #RUN R -e "install.packages('fresh')"
 #RUN R -e "install.packages('leaflet')"
