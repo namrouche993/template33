@@ -9,22 +9,15 @@ FROM rocker/shiny-verse:latest
   libglpk-dev \
   libgmp3-dev \
   libxml2-dev \
-  libcurl4-openssl-dev \
-  libcairo2-dev \
-  libv8-dev \
-  libssh2-1-dev \
-  libpng-dev \
-  zlib1g-dev \
-  libgdal-dev \
   libproj-dev
     
 
 
 RUN R -e "paste(installed.packages()[,1])"
 RUN R -e "install.packages('shinyWidgets')"
-RUN R -e "install.packages('shinyalert')"
-RUN R -e "install.packages('shinycookie')"
-RUN R -e "install.packages('googledrive')"
+#RUN R -e "install.packages('shinyalert')"
+#RUN R -e "install.packages('shinycookie')"
+#RUN R -e "install.packages('googledrive')"
 
 
 #RUN R -e "install.packages('reticulate')"
