@@ -14,7 +14,7 @@ FROM rocker/shiny-verse:latest
 
 
 RUN R -e "paste(installed.packages()[,1])"
-RUN R -e "install.packages('shinyWidgets')"
+#RUN R -e "install.packages('shinyWidgets')"
 #RUN R -e "install.packages('shinyalert')"
 #RUN R -e "install.packages('shinycookie')"
 #RUN R -e "install.packages('googledrive')"
