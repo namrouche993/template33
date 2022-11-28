@@ -19,8 +19,6 @@ FROM rocker/shiny-verse:latest
   libproj-dev
     
 
-RUN apt-add-repository -y ppa:ubuntugis/ubuntugis-unstable
-
 
 RUN R -e "paste(installed.packages()[,1])"
 RUN R -e "install.packages('shinyWidgets')"
