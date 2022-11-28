@@ -8,7 +8,14 @@
 #
 
 library(shiny)
-#library(reticulate)
+library(shinyWidgets)
+library(shinyalert)
+library(shinycookie)
+library(googledrive)
+
+ww51=c("01-ADRAR","02-CHLEF","03-LAGHOUAT","04-Oum el Bouaghi","05-BATNA","06-Béjaïa","07-BISKRA","08-Béchar","09-BLIDA","10-BOUIRA","11-Tamanghasset","12-Tébessa","13-TLEMCEN","14-TIARET","15-TIZI OUZOU","16.1-ALGER Bir Mourad Rais","16.2-ALGER Dar el Beida","16.3-ALGER Hussein dey","17-DJELFA","18-JIJEL","19-Sétif","20-Saïda","21-SKIKDA","22-Sidi Bel Abbès","23-ANNABA","24-GUELMA","25-CONSTANTINE","26-Médéa","27-MOSTAGANEM","28-Msila","29-MASCARA","30-OUARGLA","31-ORAN","32-EL BAYADH","33-ILLIZI","34-Bordj Bou Arréridj","35-Boumerdès","36-EL TARF","37-TINDOUF","38-TISSEMSILT","39-EL OUED","40-KHENCHELA","41-Souk Ahras","42-TIPAZA","43-MILA","44-Aïn Defla","45-NAAMA","46-Aïn Témouchent","47-Ghardaïa","48-RELIZANE")
+ww48=c("01-ADRAR","02-CHLEF","03-LAGHOUAT","04-Oum el Bouaghi","05-BATNA","06-Béjaïa","07-BISKRA","08-Béchar","09-BLIDA","10-BOUIRA","11-Tamanghasset","12-Tébessa","13-TLEMCEN","14-TIARET","15-TIZI OUZOU","16 ALGER","17-DJELFA","18-JIJEL","19-Sétif","20-Saïda","21-SKIKDA","22-Sidi Bel Abbès","23-ANNABA","24-GUELMA","25-CONSTANTINE","26-Médéa","27-MOSTAGANEM","28-Msila","29-MASCARA","30-OUARGLA","31-ORAN","32-EL BAYADH","33-ILLIZI","34-Bordj Bou Arréridj","35-Boumerdès","36-EL TARF","37-TINDOUF","38-TISSEMSILT","39-EL OUED","40-KHENCHELA","41-Souk Ahras","42-TIPAZA","43-MILA","44-Aïn Defla","45-NAAMA","46-Aïn Témouchent","47-Ghardaïa","48-RELIZANE")
+
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
