@@ -1,11 +1,22 @@
 FROM rocker/shiny-verse:latest
 
-RUN apt-get update && apt-get install -y  \
-    make \
-    libsodium-dev \
-    libicu-dev \
-    libcurl4-openssl-dev \
-    libssl-dev \
+ RUN apt-get update && apt-get install -y  \
+ sudo \
+ pandoc \
+  pandoc-citeproc \
+  libicu-dev \
+  libudunits2-dev \
+  libglpk-dev \
+  libgmp3-dev \
+  libxml2-dev \
+  libcurl4-openssl-dev \
+  libcairo2-dev \
+  libv8-dev \
+  libssh2-1-dev \
+  libpng-dev \
+  zlib1g-dev \
+  libgdal-dev \
+  libproj-dev
     
 
 RUN apt-add-repository -y ppa:ubuntugis/ubuntugis-unstable
