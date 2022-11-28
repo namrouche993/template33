@@ -45,7 +45,7 @@ COPY app.R /srv/shiny-server/app.R
 
 
 
-#COPY shiny-customized.config /etc/shiny-server/shiny-server.conf
+COPY shiny-customized.config /etc/shiny-server/shiny-server.conf
 
 EXPOSE 8080
 
