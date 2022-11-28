@@ -8,7 +8,7 @@
 #
 
 library(shiny)
-library(reticulate)
+#library(reticulate)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
@@ -37,14 +37,6 @@ ui <- fluidPage(
 # Define server logic required to draw a histogram
 server <- function(input, output) {
 
-    re<-reactive({
-        
-        py_run_string("avd=random.randrange(20,50)")
-        paste(py$avd+input$bins)
-    })
-    output$text1<-renderText({
-        paste(re())
-    })
     output$distPlot <- renderPlot({
         # generate bins based on input$bins from ui.R
         x    <- faithful[, 2]
